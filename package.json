@@ -1,0 +1,31 @@
+{
+  "name": "middlebury-design-system",
+  "version": "0.1.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/middlebury/middlebury-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/middlebury/middlebury-design-system/issues"
+  },
+  "license": "GPL-3.0",
+  "contributors": [
+    {
+      "name": "Zeb Pykosz",
+      "email": "zpykosz@middlebury.edu"
+    }
+  ],
+  "homepage": "https://design.middlebury.edu/",
+  "engines": {
+    "node": ">=6.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+  }
+}
