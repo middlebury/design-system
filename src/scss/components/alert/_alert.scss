@@ -1,0 +1,18 @@
+.alert {
+  padding: 0.5rem;
+}
+
+.alert--warning {
+  color: $black;
+  background-color: $warning;
+}
+
+.alert--danger {
+  color: $white;
+  background-color: $danger;
+}
+
+.alert--info {
+  color: $brand-primary;
+  background-color: $info;
+}

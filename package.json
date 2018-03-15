@@ -1,7 +1,7 @@
 {
   "name": "middlebury-design-system",
   "version": "0.1.0",
-  "description": "",
+  "description": "design system for building Middlebury websites",
   "repository": {
     "type": "git",
     "url": "https://github.com/middlebury/middlebury-design-system.git"
@@ -10,7 +10,11 @@
     "url": "https://github.com/middlebury/middlebury-design-system/issues"
   },
   "license": "GPL-3.0",
-  "contributors": [
+  "main": "dist/js/mds.umd.js",
+  "module": "dist/js/mds.es.js",
+  "style": "dist/css/mds.css",
+  "sass": "src/scss/mds.scss",
+  "maintainers": [
     {
       "name": "Zeb Pykosz",
       "email": "zpykosz@middlebury.edu"
@@ -21,11 +25,21 @@
     "node": ">=6.x"
   },
   "scripts": {
+    "build": "gulp build --production",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "yargs": "^11.0.0"
   }
 }

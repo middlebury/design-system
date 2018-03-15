@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="social-icons" stroke="none" stroke-width="1">
+        <g id="icon-mail">
+            <g id="Page-1" transform="translate(0.000000, 5.000000)">
+                <polygon id="Fill-1" points="1.27987201 -0.000129411762 15.9998722 10.3528118 30.7198723 -0.000129411762"></polygon>
+                <path d="M0,1.29411765 L0,19.4117647 C0,20.8352941 1.15200001,22 2.56000003,22 L29.4400003,22 C30.8480003,22 32.0000003,20.8352941 32.0000003,19.4117647 L32.0000003,1.29411765 L16.0000002,15.5294118 L0,1.29411765 Z" id="Fill-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

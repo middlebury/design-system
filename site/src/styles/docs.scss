@@ -1,0 +1,124 @@
+@import '../../../src/scss/middlebury';
+
+.docs-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100vh;
+}
+
+// header
+.docs-header {
+  background-color: $brand-primary;
+  padding: 2rem;
+}
+
+.docs-site-title {
+  color: $white;
+  font-size: 18px;
+  font-family: $font-family-serif;
+  font-weight: $font-weight-normal;
+  text-transform: capitalize;
+}
+
+.docs-version {
+  display: block;
+  color: $white;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.docs-github-link {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid $white;
+  display: block;
+  color: $white;
+}
+
+// main
+.docs-main {
+  padding: 3rem;
+  overflow-y: scroll;
+}
+
+// nav
+.docs-nav {
+  margin-bottom: 2rem;
+}
+
+// subnav
+.docs-subnav {
+  margin-bottom: 1rem;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.docs-subnav__button {
+  color: $white;
+  appearance: none;
+  background: none;
+  border: 0;
+  font-size: 18px;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  outline: 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  text-transform: capitalize;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.docs-subnav__button-text {
+}
+
+.docs-subnav__icon {
+  font-size: 10px;
+  float: right;
+  line-height: 18px;
+  top: 2px;
+  position: relative;
+}
+
+.docs-subnav__list {
+  margin-left: 1.5rem;
+}
+
+.docs-subnav__item {
+}
+
+.docs-subnav__link {
+  font-size: 16px;
+  color: $white;
+}
+
+// page
+
+.docs-page-header {
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.docs-page-header__title {
+  font-size: 36px;
+}
+
+// code previews
+.gatsby-code-preview {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  box-shadow: 1px 1px 4px rgba(black, 0.2);
+  padding: 2rem;
+}
+
+.gatsby-highlight-live {
+  margin-bottom: 1rem;
+}

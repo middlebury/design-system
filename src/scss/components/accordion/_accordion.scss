@@ -1,0 +1,97 @@
+.accordion {
+}
+
+.accordion--faq {
+  .accordion-item__link:before,
+  .accordion-item__content:before {
+    color: $gray;
+    font-size: 14px;
+    font-family: $font-family-serif;
+    line-height: 30px;
+    margin-right: 1rem;
+  }
+
+  .accordion-item__link {
+    display: flex;
+
+    &:before {
+      content: 'Q';
+    }
+
+    &:hover:before {
+      text-decoration: none;
+    }
+  }
+
+  .accordion-item__content {
+    &.is-toggled {
+      display: flex;
+    }
+
+    &:before {
+      content: 'A';
+    }
+  }
+}
+
+.accordion-item {
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.accordion-item__title {
+  font-size: $paragraph-font-size;
+  line-height: $paragraph-line-height;
+  font-family: $font-family-sans-serif;
+}
+
+.accordion-item__link {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.accordion-item__label {
+  .accordion-item__link:hover & {
+    text-decoration: underline;
+  }
+}
+
+.accordion-item__icon {
+  flex: 0 0 auto;
+  align-self: center;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  padding-left: 0.5rem;
+}
+
+.accordion-item__icon--open {
+  .accordion-item__link.is-toggled & {
+    display: none;
+  }
+}
+
+.accordion-item__icon--close {
+  display: none;
+
+  .accordion-item__link.is-toggled & {
+    display: inline-block;
+  }
+}
+
+.accordion-item__content {
+  padding-bottom: 1rem;
+
+  &.has-toggler {
+    display: none;
+  }
+  &.is-toggled {
+    display: block;
+  }
+}

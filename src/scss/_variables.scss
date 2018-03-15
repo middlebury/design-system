@@ -1,0 +1,241 @@
+$screen-sm: 580px;
+$screen-md: 960px;
+$screen-lg: 1200px;
+$screen-xl: 1440px; // TODO: do we need this? There's no col-xl-* or media(xl) usage
+
+// need to remove this somehow
+$grid-container-width: 1440px;
+$grid-gutter-width: 32px;
+
+// variable names based on bootstrap v4 grid variables
+$grid-columns: 12;
+$grid-gutter-base-width: 30px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg
+);
+
+// prettier-ignore
+$grid-gutter-widths: (
+  xs: 32px,
+  lg: 80px
+);
+
+// prettier-ignore
+$container-max-widths: (
+  sm: 1440px
+);
+
+$spacer: 1rem !default;
+$spacers: () !default;
+
+// prettier-ignore
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 0.25),
+    2: ($spacer * 0.5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
+// custom configs
+
+$header-width: 400px;
+$header-height: 675px;
+
+// TODO: all these variables need better names
+
+// TODO: rename and use color names e.g. brand-green, brand-blue?
+$brand-primary: #0d395f;
+$brand-primary-dark: #022543;
+$brand-secondary: #97bbd5;
+$brand-secondary-dark: #174872;
+$brand-tertiary: #0ac3a6;
+
+// from styleguide
+$light-blue: #97bbd5;
+$lighter-blue: #e5f1fa;
+
+$green-dark: #1a8574;
+$green: #1f9f8b;
+$green-light: #23b39c;
+
+$teal: #017c9f;
+$warm-gray: #e5e4e2;
+$line-gray: #dedede;
+$text-gray: #767676;
+$white: #fff;
+$black: #202020;
+$gray: #767676;
+$gray-light: #dedede;
+
+$danger: #dc3545;
+$info: $lighter-blue;
+$warning: #ffc107;
+
+$text-colors: (
+  'primary': $brand-primary,
+  'secondary': $brand-secondary,
+  'white': $white
+);
+
+$body-bg: $white;
+$body-color: $black;
+
+$border-width: 1px;
+$border-color: $line-gray;
+
+// prettier-ignore
+$font-family-sans-serif: 'whitney ssm a', 'whitney ssm b', Tahoma, Geneva, sans-serif;
+$font-family-serif: 'sentinel ssm a', 'sentinel ssm b', georgia, serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Headings
+$headings-font-family: $font-family-serif;
+$headings-font-weight: $font-weight-medium;
+$headings-font-size: 18px;
+$headings-line-height: 1.2;
+$headings-margin-bottom: 0;
+
+$h1-font-size: 32px;
+$h1-line-height: $h1-font-size + 10px;
+$h1-margin-top: 4.5rem;
+$h1-margin-bottom: 1.5rem;
+
+$h2-font-size: 24px;
+$h2-line-height: $h2-font-size + 10px;
+$h2-margin-top: 4rem;
+$h2-margin-bottom: 2rem;
+
+$h3-font-size: 20px;
+$h3-line-height: $h3-font-size + 10px;
+$h3-margin-top: 2rem;
+$h3-margin-bottom: 1.5rem;
+
+$h4-font-size: 18px;
+$h4-line-height: $h4-font-size + 10px;
+$h4-margin-top: 1.5rem;
+$h4-margin-bottom: 0.25rem;
+
+$h5-font-size: 16px;
+$h5-line-height: $h5-font-size + 10px;
+$h5-margin-top: 1.5rem;
+$h5-margin-bottom: 0.25rem;
+
+$h6-font-size: 14px;
+$h6-line-height: $h6-font-size + 10px;
+$h6-margin-top: 1.5rem;
+$h6-margin-bottom: 0;
+
+$lead-font-size: 26px;
+$lead-line-height: 38px;
+$lead-margin-bottom: 2rem;
+
+// Links
+$link-color: $brand-primary;
+$link-decoration: none;
+$link-hover-color: $brand-primary;
+$link-hover-decoration: underline;
+
+// captions
+$caption-font-size: 14px;
+
+// Paragraphs (in typography)
+$paragraph-font-size: 18px;
+$paragraph-line-height: 30px;
+$paragraph-margin-bottom: 1.5rem;
+
+// Shared buttons and forms styles
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 1.5rem;
+$input-btn-line-height: $line-height-base;
+
+$input-btn-border-width: $border-width;
+$input-btn-border-color: $border-color;
+$input-btn-border-radius: 0;
+
+$input-btn-padding-y-sm: 0.5rem;
+$input-btn-padding-x-sm: 1rem;
+
+$input-btn-padding-y-lg: 1.5rem;
+$input-btn-padding-x-lg: 1.5rem;
+
+// Buttons
+
+// button size default
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+$btn-line-height: $input-btn-line-height;
+$btn-font-size: 1rem;
+
+// button size small
+$btn-padding-y-sm: $input-btn-padding-y-sm;
+$btn-padding-x-sm: $input-btn-padding-x-sm;
+
+// button size large
+$btn-padding-y-lg: $input-btn-padding-y-lg;
+$btn-padding-x-lg: $input-btn-padding-x-lg;
+
+// button border styles
+$btn-border-width: $input-btn-border-width;
+$btn-border-color: transparent;
+$btn-border-radius: $input-btn-border-radius;
+
+$btn-font-weight: $font-weight-normal;
+$btn-disabled-opacity: 0.5;
+
+$btn-transition: color 0.2s, background-color 0.2s;
+
+// Forms
+
+// input size default
+$input-padding-y: $input-btn-padding-y;
+$input-padding-x: $input-btn-padding-y;
+$input-line-height: $input-btn-line-height;
+$input-font-size: 1rem;
+
+// input size small
+$input-padding-y-sm: $input-btn-padding-y-sm;
+$input-padding-x-sm: $input-btn-padding-x-sm;
+
+// input size large
+$input-padding-y-lg: $input-btn-padding-y-lg;
+$input-padding-x-lg: $input-btn-padding-x-lg;
+
+$input-bg: $warm-gray;
+$input-disabled-bg: $warm-gray;
+
+$input-color: $black;
+$input-border-color: $border-color;
+$input-border-width: $input-btn-border-width;
+$input-border-radius: $input-btn-border-radius;
+
+$input-focus-bg: $input-bg;
+$input-focus-border-color: $green-light;
+
+// sections
+$section-title-margin-bottom: 3rem;
+
+// component/D8 "Paragraphs"
+$component-margin-bottom: 6rem;
+
+// lists
+$list-item-margin-bottom: 0.5rem;
+$list-item-margin-bottom-md: 2rem;
+$list-item-margin-bottom-lg: 3rem;

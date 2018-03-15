@@ -1,4 +1,7 @@
-# Contributing
+---
+title: Contributing
+path: guidelines/contributing
+---
 
 ## Requirements
 
@@ -27,6 +30,12 @@ yarn lint
 
 ### Prettier
 - Use [Prettier](https://prettier.io) to autoformat js/scss `yarn prettier`
+
+## Files and folders
+
+- Use singular component filenames `_button.scss` instead of `_buttons.scss` even if it contains multiple variations
+- A component file is allowed to contain all of its variations/modifier classes e.g. `button--primary`
+
 
 ## Naming conventions
 

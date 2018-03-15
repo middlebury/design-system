@@ -1,0 +1,116 @@
+.button {
+  display: inline-block;
+  font-family: $font-family-base;
+  text-align: center;
+  border: $btn-border-width solid $btn-border-color;
+  cursor: pointer;
+  background: $input-bg;
+  transition: $btn-transition;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  border-radius: $btn-border-radius;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &--disabled,
+  &[disabled] {
+    opacity: $btn-disabled-opacity;
+    pointer-events: none;
+  }
+}
+
+// Shapes
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+.button--circle {
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 1;
+}
+
+.button--pill {
+  border-radius: 10rem;
+}
+
+// Sizes
+
+.button--sm {
+  padding: $btn-padding-y-sm $btn-padding-x-sm;
+}
+
+.button--lg {
+  padding: $btn-padding-y-lg $btn-padding-x-lg;
+}
+
+// TODO: use padding utils to override this.
+// A button size increase should also increase font size, which this does not
+// so it shouldn't be a button size modifier.
+.button--xl {
+  padding: 40px 30px; // matches .filter__button sizes
+}
+
+// Themes
+
+.button--primary {
+  background-color: $green-light;
+  color: $brand-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-primary;
+    color: $white;
+  }
+}
+
+// TODO: change to button--light
+.button--secondary {
+  background-color: $white;
+  color: $brand-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-primary-dark;
+    color: $white;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    color: $white;
+    border-color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $brand-primary;
+    }
+  }
+}
+
+.button--tertiary {
+  background-color: $brand-primary;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $green-light;
+    color: $brand-primary;
+  }
+}
+
+// Elements
+
+// TODO: use ml-2 or 1
+.button__icon {
+  margin-left: 10px;
+}
