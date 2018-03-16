@@ -1,6 +1,7 @@
 ---
 title: Contributing
 path: guidelines/contributing
+group: guidelines
 ---
 
 ## Requirements

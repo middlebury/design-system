@@ -1,3 +1,9 @@
+@mixin media($bp) {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: $bp )) {
+    @content;
+  }
+}
+
 @mixin clearfix {
   &:after {
     content: '';

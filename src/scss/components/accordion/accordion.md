@@ -6,10 +6,10 @@ group: components
 ---
 
 ## Default 
-`embed:accordion/accordion.html`
+`embed:components/accordion/accordion.html`
 
 
 ## FAQ 
-`embed:accordion/accordion--faq.html`
+`embed:components/accordion/accordion--faq.html`
 
 

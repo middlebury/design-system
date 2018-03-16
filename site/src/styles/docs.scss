@@ -1,9 +1,11 @@
 @import '../../../src/scss/middlebury';
 
 .docs-container {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  height: 100vh;
+  @include media(md) {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+  }
 }
 
 // header
@@ -46,6 +48,10 @@
   margin-bottom: 2rem;
 }
 
+.docs-nav__item {
+  margin-bottom: 1rem;
+}
+
 // subnav
 .docs-subnav {
   margin-bottom: 1rem;
@@ -61,8 +67,8 @@
   appearance: none;
   background: none;
   border: 0;
-  font-size: 18px;
-  font-weight: $font-weight-semibold;
+  font-size: 16px;
+  font-weight: $font-weight-normal;
   cursor: pointer;
   outline: 0;
   margin-bottom: 0.5rem;
@@ -86,18 +92,26 @@
   line-height: 18px;
   top: 2px;
   position: relative;
+  transition: transform 0.5s;
+
+  .docs-subnav__button.is-active & {
+    transform: rotate(-180deg);
+  }
 }
 
 .docs-subnav__list {
-  margin-left: 1.5rem;
+  margin-left: 1rem;
 }
 
 .docs-subnav__item {
+  // margin-bottom: 0.5rem;
 }
 
 .docs-subnav__link {
-  font-size: 16px;
+  font-size: 14px;
   color: $white;
+  display: block;
+  padding: 0.25rem;
 }
 
 // page
@@ -107,8 +121,114 @@
   max-width: 800px;
 }
 
+.docs-page-header__group {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: $gray;
+  margin-bottom: 0.5rem;
+}
+
 .docs-page-header__title {
   font-size: 36px;
+  margin-bottom: 0.5rem;
+}
+
+.docs-page-header__desc {
+  font-size: 24px;
+}
+
+.docs-page-header__badge {
+  font-size: 12px;
+  background-color: $brand-secondary;
+  font-weight: $font-weight-semibold;
+  color: $white;
+  padding: 0.5rem;
+  line-height: 1;
+  margin-top: 1rem;
+  // border-radius: 8px;
+  display: inline-block;
+}
+
+.docs-page__toc {
+  margin-bottom: 3rem;
+  @include media(lg) {
+    float: right;
+    position: sticky;
+    top: 0;
+    right: 2rem;
+  }
+}
+
+// table of contents
+
+.docs-toc {
+  padding-left: 1rem;
+  border-left: 1px solid $gray-light;
+
+  ul {
+    // list-style: decimal;
+
+    li {
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
+
+.docs-toc__title {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+
+// TODO: use .typography somehow without affecting live code previews
+
+.docs-markdown {
+  max-width: 50em;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > h2,
+  > h3,
+  > h4 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  > p {
+    margin-bottom: 1rem;
+  }
+
+  > ul,
+  > ol {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  > ul {
+    list-style: disc;
+  }
+
+  > ol {
+    list-style: decimal;
+  }
+
+  > .gatsby-highlight {
+    margin-bottom: 2rem;
+  }
 }
 
 // code previews

@@ -1,5 +1,5 @@
 ---
-title: name
-path: components/name
+title: Button
+path: components/button
 group: components
 ---

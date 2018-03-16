@@ -1,5 +1,6 @@
 ---
-title: name
-path: components/name
+title: Select
+desc: Dropdown select input
+path: components/select
 group: components
 ---

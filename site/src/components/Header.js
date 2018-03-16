@@ -6,7 +6,7 @@ import Nav from './Nav';
 const Header = ({title = '', nav = [], repoUrl, version}) => (
   <header className="docs-header">
     <Link to="/" className="docs-site-title">
-      {title.replace(/-/g, ' ')}
+      {title}
     </Link>
     <span className="docs-version">v{version}</span>
     <Nav items={nav} />

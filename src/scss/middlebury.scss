@@ -1,8 +1,9 @@
 @import 'variables';
+@import 'tools/mixins';
 
 @import 'global';
 
-@import 'components/button';
+@import 'components/button/button';
 @import 'components/alert/alert';
 
 @import 'utils/utils';

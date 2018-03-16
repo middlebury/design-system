@@ -17,7 +17,7 @@ class Layout extends Component {
 
     return (
       <div className="docs-container">
-        <Helmet defaultTitle={title}>
+        <Helmet defaultTitle={title} titleTemplate={`%s · ${title}`}>
           <meta name="description" content={description} />
         </Helmet>
         <Header
@@ -44,7 +44,9 @@ export const query = graphql`
         version
       }
     }
-    nav: allMarkdownRemark {
+    nav: allMarkdownRemark(
+      filter: {frontmatter: {path: {ne: ""}, group: {ne: ""}}}
+    ) {
       group(field: frontmatter___group) {
         fieldValue
         edges {

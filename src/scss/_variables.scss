@@ -104,7 +104,9 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 $font-size-base: 1rem;
-$line-height-base: 1.5;
+$line-height-body: 1.5;
+$line-height-heading: 1.25;
+$line-height-solid: 1;
 
 // Headings
 $headings-font-family: $font-family-serif;
@@ -158,13 +160,13 @@ $caption-font-size: 14px;
 
 // Paragraphs (in typography)
 $paragraph-font-size: 18px;
-$paragraph-line-height: 30px;
+$paragraph-line-height: $line-height-body;
 $paragraph-margin-bottom: 1.5rem;
 
 // Shared buttons and forms styles
 $input-btn-padding-y: 0.75rem;
 $input-btn-padding-x: 1.5rem;
-$input-btn-line-height: $line-height-base;
+$input-btn-line-height: $line-height-body;
 
 $input-btn-border-width: $border-width;
 $input-btn-border-color: $border-color;

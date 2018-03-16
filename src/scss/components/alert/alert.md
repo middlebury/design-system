@@ -7,17 +7,17 @@ desc: Alerts are used for notifiying the user whether a global emergency alert, 
 
 
 ## Default alert
-`embed:alert/alert.html`
+`embed:components/alert/alert.html`
 
 ## Info
 
 Use for general information
 
-`embed:alert/alert-info.html`
+`embed:components/alert/alert-info.html`
 
 ## Warning
 
 Warning should be used to alert the user of something non-critical or invalid form inputs.
 
-`embed:alert/alert-warning.html`
+`embed:components/alert/alert-warning.html`
 

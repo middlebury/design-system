@@ -1,5 +1,5 @@
 ---
-title: name
-path: components/name
+title: Input Group
+path: components/input-group
 group: components
 ---

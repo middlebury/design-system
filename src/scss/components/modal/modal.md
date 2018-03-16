@@ -1,5 +1,5 @@
 ---
-title: name
-path: components/name
+title: Modal
+path: components/modal
 group: components
 ---

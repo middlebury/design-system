@@ -1,5 +1,5 @@
 ---
-title: name
-path: components/name
+title: Form
+path: components/form
 group: components
 ---

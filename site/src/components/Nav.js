@@ -34,6 +34,10 @@ class SubNav extends Component {
     const {label, items = []} = this.props;
     const {isActive} = this.state;
 
+    const sortedItems = items.sort(
+      (a, b) => (a.node.frontmatter.title < b.node.frontmatter.title ? -1 : 1)
+    );
+
     return (
       <div>
         <button
@@ -49,7 +53,7 @@ class SubNav extends Component {
         </button>
         <nav className={classNames('docs-subnav', {'is-active': isActive})}>
           <ul className="docs-subnav__list">
-            {items.map(({node}, i) => (
+            {sortedItems.map(({node}, i) => (
               <li key={i} className="docs-subnav__item">
                 <Link
                   to={'/' + node.frontmatter.path}
@@ -66,16 +70,17 @@ class SubNav extends Component {
   }
 }
 
-const Nav = ({items = []}) => (
-  <nav className="docs-nav">
-    <ul className="docs-nav__list">
-      {items.map((group, i) => (
-        <li key={i} className="docs-nav__item">
-          <SubNav label={group.fieldValue} items={group.edges} />
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
-
+const Nav = ({items = []}) => {
+  return (
+    <nav className="docs-nav">
+      <ul className="docs-nav__list">
+        {items.map((group, i) => (
+          <li key={i} className="docs-nav__item">
+            <SubNav label={group.fieldValue} items={group.edges} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 export default Nav;

@@ -34,7 +34,7 @@ const getLanguage = file => {
 };
 
 module.exports = (
-  {markdownAST},
+  {markdownAST, markdownNode, getNode, files, pathPrefix, reporter},
   {classPrefix = 'language-', directory} = {}
 ) => {
   if (!directory) {
@@ -45,11 +45,16 @@ module.exports = (
     directory += '/';
   }
 
+  // console.log(markdownNode, pathPrefix);
+
   visit(markdownAST, 'inlineCode', node => {
     const {value} = node;
 
     if (value.startsWith('embed:')) {
       const file = value.substr(6);
+
+      // console.log(file);
+
       const path = normalizePath(`${directory}${file}`);
 
       if (!fs.existsSync(path)) {

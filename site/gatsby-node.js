@@ -1,57 +1,46 @@
-const _ = require('lodash');
-const Promise = require('bluebird');
 const path = require('path');
 const {createFilePath} = require('gatsby-source-filesystem');
 
-exports.createPages = ({graphql, boundActionCreators}) => {
+exports.createPages = async ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators;
 
-  return new Promise((resolve, reject) => {
-    const componentPage = path.resolve('./src/templates/component-page.js');
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    path
-                  }
-                }
-              }
+  const componentPage = path.resolve('./src/templates/component-page.js');
+
+  const allMarkdown = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {frontmatter: {title: {ne: ""}, path: {ne: ""}}}
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              path
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
         }
+      }
+    }
+  `);
 
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+  if (allMarkdown.errors) {
+    console.error(allMarkdown.errors);
+    throw Error(allMarkdown.errors);
+  }
 
-        _.each(posts, (post, index) => {
-          // const previous = index === posts.length - 1 ? false : posts[index + 1].node;
-          // const next = index === 0 ? false : posts[index - 1].node;
-
-          createPage({
-            path: post.node.frontmatter.path,
-            component: componentPage,
-            context: {
-              slug: post.node.frontmatter.path
-              // previous,
-              // next,
-            }
-          });
-        });
-      })
-    );
+  allMarkdown.data.allMarkdownRemark.edges.forEach(({node}) => {
+    createPage({
+      path: node.frontmatter.path,
+      component: componentPage,
+      context: {
+        slug: node.frontmatter.path
+        // previous,
+        // next,
+      }
+    });
   });
 };
 

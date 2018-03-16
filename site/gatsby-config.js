@@ -4,7 +4,7 @@ const pkg = require('../package.json');
 
 module.exports = {
   siteMetadata: {
-    title: pkg.name,
+    title: 'Middlebury Design System',
     description: pkg.description,
     repoUrl: pkg.repository.url,
     version: pkg.version
@@ -13,16 +13,24 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/../src/scss/`,
         name: 'pages'
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/`,
+        name: 'content'
+      }
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-code-preview',
@@ -33,7 +41,7 @@ module.exports = {
               // eg examples/path/to/file.js
 
               // TODO: make imports relative to the markdown file
-              directory: `${__dirname}/../src/scss/components`
+              directory: `${__dirname}/../src/scss`
             }
           }
           // 'gatsby-remark-copy-linked-files',
