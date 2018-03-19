@@ -45,7 +45,7 @@ export const query = graphql`
       }
     }
     nav: allMarkdownRemark(
-      filter: {frontmatter: {path: {ne: ""}, group: {ne: ""}}}
+      filter: {frontmatter: {path: {ne: null}, group: {ne: null}}}
     ) {
       group(field: frontmatter___group) {
         fieldValue
