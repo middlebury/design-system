@@ -4,7 +4,7 @@ const {createFilePath} = require('gatsby-source-filesystem');
 exports.createPages = async ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators;
 
-  const componentPage = path.resolve('./src/templates/component-page.js');
+  const docPage = path.resolve('./src/templates/doc-page.js');
 
   const allMarkdown = await graphql(`
     {
@@ -34,7 +34,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   allMarkdown.data.allMarkdownRemark.edges.forEach(({node}) => {
     createPage({
       path: node.frontmatter.path,
-      component: componentPage,
+      component: docPage,
       context: {
         slug: node.frontmatter.path
         // previous,

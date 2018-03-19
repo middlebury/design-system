@@ -45,7 +45,7 @@ export default ComponentPage;
 
 export const pageQuery = graphql`
   query ComponentPage($slug: String!) {
-    markdownRemark(frontmatter: {path: {eq: $slug}}) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       tableOfContents
