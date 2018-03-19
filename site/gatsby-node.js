@@ -6,6 +6,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
 
   const docPage = path.resolve('./src/templates/doc-page.js');
 
+  // get all markdown with a frontmatter path field and title
   const allMarkdown = await graphql(`
     {
       allMarkdownRemark(
@@ -32,25 +33,29 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({node}) => {
+    // use frontmatter path or slug auto created
+    const {path} = node.frontmatter;
+
     createPage({
-      path: node.frontmatter.path,
+      path,
       component: docPage,
+      // context is passed to the component ^ specified as query variables
       context: {
-        slug: node.frontmatter.path
-        // previous,
-        // next,
+        slug: path
       }
     });
   });
 };
 
+// nodes are created via source filesystem plugin
 exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   const {createNodeField} = boundActionCreators;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  // adds the slug field so it can be used in createPages
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({node, getNode});
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value: node.frontmatter.path || value
     });
