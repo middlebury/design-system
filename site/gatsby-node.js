@@ -52,7 +52,7 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value: node.frontmatter.path || value
     });
   }
 };
