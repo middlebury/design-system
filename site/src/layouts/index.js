@@ -9,14 +9,21 @@ import '../../../src/js';
 import 'prism-themes/themes/prism-ghcolors.css';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class Layout extends Component {
   render() {
     const {children, data} = this.props;
-    const {title, description, repoUrl, version} = data.site.siteMetadata;
+    const {
+      title,
+      description,
+      repoUrl,
+      bugsUrl,
+      version
+    } = data.site.siteMetadata;
 
     return (
-      <div className="docs-container">
+      <div className="docs">
         <Helmet defaultTitle={title} titleTemplate={`%s · ${title}`}>
           <meta name="description" content={description} />
         </Helmet>
@@ -26,7 +33,10 @@ class Layout extends Component {
           version={version}
           nav={data.nav.group}
         />
-        <main className="docs-main">{children()}</main>
+        <div className="docs-container">
+          <main className="docs-main">{children()}</main>
+          <Footer bugsUrl={bugsUrl} version={version} />
+        </div>
       </div>
     );
   }
@@ -40,6 +50,7 @@ export const query = graphql`
       siteMetadata {
         title
         repoUrl
+        bugsUrl
         description
         version
       }
