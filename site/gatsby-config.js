@@ -27,6 +27,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/../src/icons/`,
+        name: 'icons'
+      }
+    },
+    'gatsby-transformer-svg',
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
