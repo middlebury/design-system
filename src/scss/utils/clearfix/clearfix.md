@@ -1,8 +1,9 @@
 ---
-# title: Clearfix
+title: Clearfix
 desc: Use clearfix for clearing floats in content
-# path: utilities/clearfix
+path: utilities/clearfix
 group: utilities
 ---
 
-<!-- `embed:utils/clearfix/clearfix.html` -->
+`preview:utils/clearfix/clearfix.html`
+`embed:utils/clearfix/clearfix.html`

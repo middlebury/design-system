@@ -1,0 +1,88 @@
+.schedule {
+  margin-bottom: $component-margin-bottom;
+}
+
+.schedule__title {
+  @include section-title();
+}
+
+// schedule-header
+.schedule-header {
+  background-color: $lighter-blue;
+  padding: 0.5rem;
+
+  @include media(sm) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.schedule-header__title {
+  font-size: $h3-font-size;
+
+  @include media(sm) {
+    width: 30%;
+  }
+}
+
+.schedule-header__text {
+}
+
+// schedule-item
+.schedule-item {
+  padding-top: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1.5rem;
+
+  & + & {
+    border-top: 1px solid $border-color;
+  }
+
+  @include media(sm) {
+    display: flex;
+  }
+}
+
+.schedule-item__details {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+
+  @include media(sm) {
+    width: 30%;
+    padding-right: 1rem;
+  }
+}
+
+.schedule-item__time {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.schedule-item__local {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.schedule-item__body {
+  @include media(sm) {
+    width: 70%;
+  }
+}
+
+.schedule-item__title {
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-item__name {
+  font-size: 18px;
+}
+
+.schedule-item__job {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,148 @@
+// container
+
+#___gcse_0 {
+  .gsc-control-cse {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  // search
+  .gsc-search-box {
+    padding: 0;
+  }
+
+  td.gsc-input {
+    padding-right: 0.5rem;
+  }
+
+  input.gsc-input {
+    padding: 0.5rem;
+    font-family: $font-family-sans-serif;
+    background-position: 0.5rem;
+    width: 100%;
+  }
+
+  input.gsc-search-button {
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: $brand-primary;
+    padding: 0.5rem 1rem;
+    height: auto;
+    cursor: pointer;
+  }
+
+  // filter tabs
+  .gsc-tabsArea {
+    // border-bottom: 0;
+
+    .gsc-tabHeader {
+      font-size: 14px;
+      padding: 0.25rem 0.5rem;
+      font-weight: normal;
+      text-transform: none;
+      margin-right: 0.5rem;
+      margin-top: 0;
+
+      &:not(.gsc-tabhActive):hover {
+        background-color: $line-gray;
+      }
+    }
+
+    .gsc-tabHeader.gsc-tabhInactive {
+      background: none;
+      color: $brand-primary;
+      border: 0;
+    }
+
+    .gsc-tabhActive {
+      background-color: $brand-primary;
+    }
+  }
+
+  // results container
+  .gsc-result {
+    border: 0;
+    margin-bottom: 3rem;
+  }
+
+  // results items
+  .gsc-table-cell-snippet-close {
+    padding: 0;
+  }
+
+  .gsc-table-cell-thumbnail {
+    padding: 0 1rem 0 0;
+  }
+
+  .gs-title {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    margin-bottom: 0.5rem;
+    color: $brand-primary;
+    font-family: $font-family-serif;
+    text-decoration: none;
+
+    b {
+      text-decoration: none;
+      font-weight: normal;
+      font-size: $h3-font-size;
+      line-height: $h3-line-height;
+      color: currentColor;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .gs-fileFormat {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-family: $font-family-sans-serif;
+  }
+
+  .gs-snippet {
+    font-family: $font-family-sans-serif;
+    font-size: $paragraph-font-size;
+    line-height: $paragraph-line-height;
+    margin-bottom: 0.5rem;
+  }
+
+  .gs-visibleUrl-long {
+    font-family: $font-family-sans-serif;
+    font-family: 14px;
+    margin-bottom: 0.5rem;
+  }
+
+  .gs-per-result-labels {
+    font-family: $font-family-sans-serif;
+  }
+
+  // pagination
+
+  .gsc-cursor-box {
+    border-top: 0;
+  }
+
+  .gsc-cursor-page {
+    font-weight: $font-weight-semibold;
+    font-size: 14px;
+    padding: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      background-color: $line-gray;
+    }
+  }
+
+  .gsc-cursor-current-page {
+    background-color: $brand-primary;
+    color: $white;
+  }
+
+  .gs-promotion .gs-visibleUrl {
+    color: $black;
+  }
+}

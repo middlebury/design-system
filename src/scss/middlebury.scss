@@ -3,7 +3,35 @@
 
 @import 'global';
 
-@import 'components/button/button';
-@import 'components/alert/alert';
+// @import '../../node_modules/bootstrap/scss/mixins';
+// @import '../../node_modules/bootstrap/scss/grid';
 
-@import 'utils/utils';
+@import 'objects/grid/grid';
+
+@import 'components/alert/alert';
+@import 'components/breadcrumb/breadcrumb';
+@import 'components/button/button';
+@import 'components/callout/callout';
+@import 'components/callout/callout-group';
+@import 'components/input-group/input-group';
+@import 'components/pagination/pagination';
+@import 'components/schedule/schedule';
+
+@import 'utils/background/background';
+@import 'utils/clearfix/clearfix';
+@import 'utils/color/color';
+@import 'utils/display/display';
+@import 'utils/flex/flex';
+@import 'utils/float/float';
+@import 'utils/font/font';
+@import 'utils/screen-reader/screen-reader';
+@import 'utils/spacing/spacing';
+@import 'utils/text/text';
+
+@import 'scope/typography/typography';
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}

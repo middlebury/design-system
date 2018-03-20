@@ -6,6 +6,7 @@ group: components
 ---
 
 ## Default 
+`preview:components/accordion/accordion.html`
 `embed:components/accordion/accordion.html`
 
 

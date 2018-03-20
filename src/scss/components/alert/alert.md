@@ -5,19 +5,24 @@ group: components
 desc: Alerts are used for notifiying the user whether a global emergency alert, general information, or a successful result of an action they've taken.
 ---
 
-
-## Default alert
-`embed:components/alert/alert.html`
-
 ## Info
 
-Use for general information
-
+`preview:components/alert/alert-info.html`
 `embed:components/alert/alert-info.html`
 
 ## Warning
 
-Warning should be used to alert the user of something non-critical or invalid form inputs.
-
+`preview:components/alert/alert-warning.html`
 `embed:components/alert/alert-warning.html`
+
+## Danger
+
+`preview:components/alert/alert-danger.html`
+`embed:components/alert/alert-danger.html`
+
+
+## Success
+
+`preview:components/alert/alert-success.html`
+`embed:components/alert/alert-success.html`
 
