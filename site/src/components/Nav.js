@@ -56,7 +56,7 @@ class SubNav extends Component {
             {sortedItems.map(({node}, i) => (
               <li key={i} className="docs-subnav__item">
                 <Link
-                  to={'/' + node.frontmatter.path}
+                  to={'/' + node.frontmatter.path + '/'}
                   className="docs-subnav__link"
                 >
                   {node.frontmatter.title}
