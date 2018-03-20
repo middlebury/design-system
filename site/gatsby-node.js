@@ -10,7 +10,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   const allMarkdown = await graphql(`
     {
       allMarkdownRemark(
-        filter: {frontmatter: {title: {ne: ""}, path: {ne: ""}}}
+        filter: {frontmatter: {title: {ne: null}, path: {ne: null}}}
       ) {
         edges {
           node {
