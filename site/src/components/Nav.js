@@ -70,11 +70,23 @@ class SubNav extends Component {
   }
 }
 
+const findGroup = (items, name) => items.find(g => g.fieldValue === name);
+
 const Nav = ({items = []}) => {
+  // rebuilds the items in the order we prefer
+  const navItems = [
+    'getting started',
+    'guidelines',
+    'style',
+    'components',
+    'utilities',
+    'scope'
+  ].map(name => findGroup(items, name));
+
   return (
     <nav className="docs-nav">
       <ul className="docs-nav__list">
-        {items.map((group, i) => (
+        {navItems.map((group, i) => (
           <li key={i} className="docs-nav__item">
             <SubNav label={group.fieldValue} items={group.edges} />
           </li>
