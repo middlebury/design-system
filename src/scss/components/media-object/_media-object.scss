@@ -1,0 +1,23 @@
+// TODO: change this so image dictates the width, not forcing a width
+
+.media-object {
+  display: flex;
+}
+
+.media-object__image {
+  width: 25%;
+  padding-right: 1.5rem;
+  min-width: 100px;
+}
+
+.media-object__body {
+  width: 75%;
+}
+
+.media-object--right {
+  .media-object__image {
+    order: 2;
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+}
