@@ -11,6 +11,7 @@ group: components
 
 
 ## FAQ 
+`preview:components/accordion/accordion--faq.html`
 `embed:components/accordion/accordion--faq.html`
 
 
