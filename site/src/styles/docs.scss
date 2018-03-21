@@ -1,17 +1,25 @@
 @import '../../../src/scss/middlebury';
 
-.docs-container {
+.docs {
   @include media(md) {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    height: 100vh;
+    // display: grid;
+    // grid-template-columns: 320px 1fr;
+    // height: 100vh;
   }
 }
+
+$docs-header-width: 20rem;
 
 // header
 .docs-header {
   background-color: $brand-primary;
   padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $docs-header-width;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .docs-site-title {
@@ -20,6 +28,8 @@
   font-family: $font-family-serif;
   font-weight: $font-weight-normal;
   text-transform: capitalize;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .docs-version {
@@ -37,10 +47,14 @@
   color: $white;
 }
 
+.docs-container {
+  margin-left: $docs-header-width;
+}
+
 // main
 .docs-main {
   padding: 3rem;
-  overflow-y: scroll;
+  min-height: 100vh;
 }
 
 // nav
@@ -149,13 +163,30 @@
   display: inline-block;
 }
 
+.docs-page__main {
+  position: relative;
+  @include media(xl) {
+    display: flex;
+  }
+}
+
 .docs-page__toc {
   margin-bottom: 3rem;
-  @include media(lg) {
-    float: right;
+
+  @include media(xl) {
     position: sticky;
+    padding-left: 6rem;
+    order: 2;
     top: 0;
     right: 2rem;
+    align-self: flex-start;
+    padding-top: 1rem;
+  }
+}
+
+.docs-page__content {
+  @include media(xl) {
+    width: 800px;
   }
 }
 
