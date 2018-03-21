@@ -1,7 +1,7 @@
 ---
 title: Spacing
-desc: Adjust margin and padding of elements 
+desc: Adjust margin and padding of elements based on multiples 8px 
 responsive: true
-path: style/spacing
-group: style
+path: utilities/spacing
+group: utilities
 ---
