@@ -34,6 +34,7 @@ module.exports = {
         name: 'icons'
       }
     },
+    'gatsby-transformer-yaml',
     'gatsby-transformer-svg',
     {
       resolve: 'gatsby-transformer-remark',
