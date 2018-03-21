@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "reset": "rm -rf ./.cache"
   },
   "dependencies": {
     "classnames": "^2.2.5",
