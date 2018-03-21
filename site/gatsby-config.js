@@ -53,6 +53,13 @@ module.exports = {
               // TODO: make imports relative to the markdown file
               directory: `${__dirname}/../src/scss`
             }
+          },
+          {
+            resolve: 'gatsby-remark-embed-snippet',
+            options: {
+              classPrefix: 'language-',
+              directory: `${__dirname}/../src/scss`
+            }
           }
           // 'gatsby-remark-copy-linked-files',
           // 'gatsby-remark-smartypants'
