@@ -20,6 +20,7 @@
     "gatsby-transformer-remark": "^1.7.36",
     "gatsby-transformer-yaml": "^1.5.16",
     "prism-themes": "^1.0.0",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-helmet": "^5.2.0"
   }
 }
