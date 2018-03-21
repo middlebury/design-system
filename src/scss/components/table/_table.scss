@@ -18,8 +18,7 @@
     font-size: 14px;
     font-weight: $font-weight-semibold;
     text-align: left;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
 
     @include media(md) {
       display: table-cell;
@@ -47,8 +46,7 @@
 
   td {
     display: block;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 0.5rem;
 
     &:before {
       content: attr(data-th);
