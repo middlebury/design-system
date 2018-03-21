@@ -6,7 +6,7 @@ group: getting started
 ---
 
 
-## Install
+## Installation
 
 Install via NPM
 
@@ -20,7 +20,7 @@ or Yarn
 yarn add middlebury-design-system
 ```
 
-## CDN
+### CDN
 
 If you're inclided to import static assets from a CDN, we recommend using [unpkg.com](https://unpkg.com)
 
@@ -66,7 +66,7 @@ import { Toggler } from 'middlebury'
 const Toggler = require('middlebury').Toggler
 ```
 
-### Using the built js files
+### Using the prebuilt JS files
 
 ```html
 <html>
