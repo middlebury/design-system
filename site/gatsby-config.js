@@ -41,7 +41,7 @@ module.exports = {
           'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
           {
-            resolve: 'gatsby-remark-code-preview',
+            resolve: 'gatsby-remark-preview-snippet',
             options: {
               classPrefix: 'language-',
 
