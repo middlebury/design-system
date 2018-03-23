@@ -1,0 +1,4 @@
+{
+  "name": "gatsby-remark-html-preview",
+  "description": "Renders HTML snippets in markdown files before the code sample"
+}

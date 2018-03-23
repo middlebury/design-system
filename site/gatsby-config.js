@@ -41,6 +41,7 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-autolink-headers',
+          'gatsby-remark-html-preview',
           'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-preview-snippet',
