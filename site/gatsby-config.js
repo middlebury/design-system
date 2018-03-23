@@ -54,11 +54,6 @@ module.exports = {
           {
             resolve: 'gatsby-remark-preview-snippet',
             options: {
-              classPrefix: 'language-',
-
-              // Example code links are relative to this dir.
-              // eg examples/path/to/file.js
-
               // TODO: make imports relative to the markdown file
               directory: `${__dirname}/../src/scss`
             }
