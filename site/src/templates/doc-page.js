@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Helmet from 'react-helmet';
 
+import ColorPalette from '../components/ColorPalette';
+import IconLibrary from '../components/IconLibrary';
+
 const TableOfContents = ({toc}) => (
   <nav className="docs-toc">
     <h2 className="docs-toc__title">Table of contents</h2>
@@ -11,11 +14,31 @@ const TableOfContents = ({toc}) => (
   </nav>
 );
 
-class ComponentPage extends Component {
+const SassDoc = ({doc}) => {
+  const {description, name, type} = doc;
+  return (
+    <div>
+      <p>{type}</p>
+      <h3>{name}</h3>
+      <p>{description}</p>
+    </div>
+  );
+};
+
+class DocPageTemplate extends Component {
   render() {
-    const post = this.props.data.markdownRemark;
-    const {tableOfContents} = post;
-    const {title, desc, group, responsive} = post.frontmatter;
+    const {doc, icons, colors, sassdoc} = this.props.data;
+
+    const {html, tableOfContents} = doc;
+    const {
+      title,
+      desc,
+      group,
+      responsive,
+      showIcons,
+      showColors
+    } = doc.frontmatter;
+
     return (
       <article className="docs-page">
         <Helmet title={title}>
@@ -27,25 +50,35 @@ class ComponentPage extends Component {
           {desc && <p className="docs-page-header__desc">{desc}</p>}
           {responsive && <p className="docs-page-header__badge">Responsive</p>}
         </header>
-        {tableOfContents && (
-          <div className="docs-page__toc">
-            <TableOfContents toc={tableOfContents} />
+        <section className="docs-page__main">
+          {tableOfContents && (
+            <div className="docs-page__toc">
+              <TableOfContents toc={tableOfContents} />
+            </div>
+          )}
+
+          <div className="docs-page__content">
+            {showIcons && <IconLibrary icons={icons} />}
+            {showColors && <ColorPalette colors={colors} />}
+
+            <div
+              className="docs-markdown"
+              dangerouslySetInnerHTML={{__html: html}}
+            />
+
+            {/* <SassDoc doc={sassdoc} /> */}
           </div>
-        )}
-        <div
-          className="docs-markdown"
-          dangerouslySetInnerHTML={{__html: post.html}}
-        />
+        </section>
       </article>
     );
   }
 }
 
-export default ComponentPage;
+export default DocPageTemplate;
 
 export const pageQuery = graphql`
-  query ComponentPage($slug: String!) {
-    markdownRemark(fields: {slug: {eq: $slug}}) {
+  query docPage($slug: String!) {
+    doc: markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       tableOfContents
@@ -54,7 +87,51 @@ export const pageQuery = graphql`
         desc
         responsive
         group
+        showIcons # defines whether or not to show icons on page
+        showColors # defines whether or not to show colors on page
       }
     }
+    icons: allSvg(filter: {id: {regex: "/icons/"}}) {
+      edges {
+        node {
+          id
+          name
+          internal {
+            content
+          }
+        }
+      }
+    }
+    colors: allColorsYaml {
+      edges {
+        node {
+          id
+          name
+          hex
+        }
+      }
+    }
+    # sassdoc: sassdoc(name: {eq: $sassdoc}) {
+    #   name
+    #   sassDocAst {
+    #     description
+    #     access
+    #     context {
+    #       type
+    #       name
+    #       code
+    #       line {
+    #         start
+    #         end
+    #       }
+    #     }
+    #     file {
+    #       path {
+    #         id
+    #         name
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;

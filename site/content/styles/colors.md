@@ -1,5 +1,6 @@
 ---
-title: Colors
-path: style/colors
+title: Color
+path: style/color
+showColors: true
 group: style
 ---
