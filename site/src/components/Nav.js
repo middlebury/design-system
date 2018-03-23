@@ -86,8 +86,8 @@ const Nav = ({items = []}) => {
   return (
     <nav className="docs-nav">
       <ul className="docs-nav__list">
-        {navItems.map((group, i) => (
-          <li key={i} className="docs-nav__item">
+        {navItems.map(group => (
+          <li key={group.fieldValue} className="docs-nav__item">
             <SubNav label={group.fieldValue} items={group.edges} />
           </li>
         ))}
