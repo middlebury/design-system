@@ -7,6 +7,7 @@ module.exports = {
     title: 'Middlebury Design System',
     description: pkg.description,
     repoUrl: pkg.repository.url,
+    bugsUrl: pkg.bugs.url,
     version: pkg.version
   },
   plugins: [
