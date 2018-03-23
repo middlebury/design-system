@@ -35,6 +35,13 @@ module.exports = {
         name: 'icons'
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/data/`,
+        name: 'data'
+      }
+    },
     'gatsby-transformer-yaml',
     'gatsby-transformer-svg',
     {
