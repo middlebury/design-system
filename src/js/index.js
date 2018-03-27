@@ -1,1 +1,1 @@
-import './toggler';
+export {default as Toggler} from './toggler';
