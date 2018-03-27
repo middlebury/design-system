@@ -27,13 +27,14 @@
   "scripts": {
     "build": "gulp build --production",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && bundlesize"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {
+    "bundlesize": "^0.17.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-cssnano": "^2.1.2",
@@ -43,4 +44,10 @@
     "gulp-uglify": "^3.0.0",
     "yargs": "^11.0.0"
   }
+  "bundlesize": [
+    {
+      "path": "./dist/css/*.css",
+      "maxSize": "10 kB"
+    }
+  ]
 }
