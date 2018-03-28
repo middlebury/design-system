@@ -1,7 +1,7 @@
 {
   "name": "middlebury-design-system",
   "version": "0.1.0",
-  "description": "design system for building Middlebury websites",
+  "description": "Front-end design system for building Middlebury websites",
   "repository": {
     "type": "git",
     "url": "https://github.com/middlebury/middlebury-design-system.git"
