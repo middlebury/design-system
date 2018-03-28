@@ -25,6 +25,12 @@
     "node": ">=8.10.0",
     "yarn": ">=1.5.0"
   },
+  "files": [
+    "dist/**/*",
+    "scss/**/*",
+    "es/**/*",
+    "umd/**/*"
+  ],
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
