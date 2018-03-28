@@ -10,10 +10,10 @@
     "url": "https://github.com/middlebury/middlebury-design-system/issues"
   },
   "license": "GPL-3.0",
-  "main": "dist/js/mds.umd.js",
-  "module": "dist/js/mds.es.js",
+  "main": "umd/index.js",
+  "module": "es/index.js",
   "style": "dist/css/mds.css",
-  "sass": "src/scss/mds.scss",
+  "sass": "scss/mds.scss",
   "maintainers": [
     {
       "name": "Zeb Pykosz",
@@ -25,7 +25,10 @@
     "node": ">=6.x"
   },
   "scripts": {
-    "build": "gulp build --production",
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "prebuild": "gulp clean",
+    "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "npm run build && bundlesize"
   },
@@ -34,16 +37,28 @@
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
     "bundlesize": "^0.17.0",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "yargs": "^11.0.0"
-  }
+    "gulp-wrap": "^0.13.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
   "bundlesize": [
     {
       "path": "./dist/css/*.css",
