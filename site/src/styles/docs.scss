@@ -365,3 +365,15 @@ pre[class*='language-'] {
 .docs-colors__name {
   font-size: 14px;
 }
+
+// example specific styles
+
+[class*='gatsby-code-preview--grid'] {
+  [class*='col-'] {
+    text-align: center;
+    background-color: $gray-light;
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
