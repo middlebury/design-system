@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/../src/icons/`,
+        path: `${__dirname}/../dist/icons/svg/`,
         name: 'icons'
       }
     },
