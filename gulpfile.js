@@ -10,6 +10,10 @@ const uglify = require('gulp-uglify');
 const wrap = require('gulp-wrap');
 const babel = require('gulp-babel');
 const rename = require('gulp-rename');
+const svgSprite = require('gulp-svg-sprite');
+const svgo = require('gulp-svgo');
+const rsp = require('remove-svg-properties').stream;
+const dom = require('gulp-dom');
 
 const rollup = require('rollup');
 const rollupBabel = require('rollup-plugin-babel');
@@ -28,7 +32,8 @@ gulp.task('clean', () =>
     './es',
     './scss',
     './dist/css',
-    './dist/js'
+    './dist/js',
+    './dist/icons'
   ])
 );
 
@@ -200,6 +205,75 @@ gulp.task('scripts:compiled', ['scripts:rollup'], () =>
 );
 
 /**
+ * svgs
+ */
+
+const buildSvgs = src =>
+  gulp
+    .src(src)
+    .pipe(
+      rsp.remove({
+        properties: ['fill', rsp.PROPS_STROKE],
+        log: false
+      })
+    )
+    .pipe(
+      dom(function() {
+        const svg = this.querySelector('svg');
+        svg.setAttribute('fill-rule', 'evenodd');
+        svg.removeAttribute('xmlns');
+        return this.querySelector('body').innerHTML;
+      }, false)
+    )
+    .pipe(
+      svgo({
+        plugins: [{removeTitle: true}]
+      })
+    );
+
+// clean up and minify svgs
+gulp.task('svg:build', () =>
+  buildSvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'))
+);
+
+// create svg sprite
+gulp.task('svg:sprite', () =>
+  buildSvgs('./src/icons/*.svg')
+    .pipe(
+      svgSprite({
+        shape: {
+          id: {
+            generator: 'icon-%s'
+          }
+        },
+        mode: {
+          symbol: {
+            // Activate the defs mode
+            bust: false, // Cache busting
+            example: true // Build a page
+          }
+        }
+      })
+    )
+    .pipe(gulp.dest('./dist/icons/sprites'))
+);
+
+// copy/rename final svg files and sprite
+gulp.task('svg:dist', ['svg:sprite'], () =>
+  gulp
+    .src('./dist/icons/sprites/symbol/**/*.svg')
+    .pipe(
+      rename(path => {
+        if (path.extname === '.svg') {
+          path.basename = 'mds-icons';
+          path.dirname = '.';
+        }
+      })
+    )
+    .pipe(gulp.dest('./dist/icons'))
+);
+
+/**
  * TODO: a11y markup test
  */
 
@@ -227,8 +301,11 @@ gulp.task('build:scripts', ['scripts:umd', 'scripts:es', 'scripts:compiled']);
 // compile all sass and move source files
 gulp.task('build:styles', ['styles:compiled', 'styles:source']);
 
+// minify svgs, create svg sprite, and move to dist
+gulp.task('build:icons', ['svg:build', 'svg:dist']);
+
 // Mapped to npm run build
-gulp.task('build', ['build:scripts', 'build:styles']);
+gulp.task('build', ['build:scripts', 'build:styles', 'build:icons']);
 
 // For demo environment
 gulp.task('dev', ['scripts:dev', 'html:dev', 'styles:dev', 'serve', 'watch']);
