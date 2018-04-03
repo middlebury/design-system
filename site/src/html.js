@@ -42,7 +42,10 @@ module.exports = class HTML extends React.Component {
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
-          <span dangerouslySetInnerHTML={{__html: icons}} />
+          <span
+            style={{position: 'absolute', width: 0, height: 0}}
+            dangerouslySetInnerHTML={{__html: icons}}
+          />
           <div
             key={'body'}
             id="___gatsby"
