@@ -1,5 +1,7 @@
 import React from 'react';
 
+import icons from '!raw-loader!../../dist/icons/mds-icons.svg';
+
 let stylesStr;
 if (process.env.NODE_ENV === `production`) {
   try {
@@ -40,6 +42,7 @@ module.exports = class HTML extends React.Component {
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
+          <span dangerouslySetInnerHTML={{__html: icons}} />
           <div
             key={'body'}
             id="___gatsby"
