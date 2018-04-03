@@ -114,7 +114,14 @@ gulp.task('scripts:dev', () =>
       plugins: [
         rollupBabel({
           exclude: 'node_modules/**',
-          presets: ['env'],
+          presets: [
+            [
+              'env',
+              {
+                modules: false
+              }
+            ]
+          ],
           plugins: ['external-helpers']
         }),
         rollupResolve()
