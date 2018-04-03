@@ -1,0 +1,24 @@
+<!--
+  This template is for isolated development of components.
+  It will be wrapped around all component html files and served with gulp.
+-->
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/mds.css" />
+    <title>Demo</title>
+    <style>
+      .mds-demo {
+        margin: 100px auto;
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mds-demo">
+      <%= contents %>
+    </div>
+    <script src="/js/demo.js"></script>
+  </body>
+</html>
