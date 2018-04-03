@@ -71,6 +71,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.0",
     "gulp-wrap": "^0.13.0",
     "rollup": "^0.57.1",
