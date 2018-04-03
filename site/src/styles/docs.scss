@@ -283,10 +283,11 @@ $docs-header-width: 20rem;
   li > code,
   p > code {
     // background-color: $gray-light;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     padding: 2px;
-    border-radius: 4px;
+    // border-radius: 4px;
     white-space: nowrap;
+    background: $lighter-blue;
   }
 }
 
