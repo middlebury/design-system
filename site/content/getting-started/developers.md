@@ -26,21 +26,20 @@ If you're inclided to import static assets from a CDN, we recommend using [unpkg
 
 ||URL|
 ---|---
-CSS|https://unpkg.com/middlebury/dist/css/middlebury.min.css
-ES5|https://unpkg.com/middlebury/dist/js/middlebury.es.min.js
-UMD|https://unpkg.com/middlebury/dist/js/umd/middlebury.umd.min.js
+CSS|https://unpkg.com/middlebury-design-system/dist/css/mds.min.css
+JS|https://unpkg.com/middlebury-design-system/dist/js/mds.min.js
 
-See all files from Middlebury Design System available on [unpkg CDN](httsp://unpkg.com/middlebury). 
+See all files from Middlebury Design System available on [unpkg CDN](httsp://unpkg.com/middlebury-design-system/). 
 
 
 ## SCSS
 
-Using the Sass files infers usage of the SCSS pre-processor. All Sass files use the *.scss file extension.
+If you are using your own build tools to compile Sass, you can import invidiual components.
 
 ### Importing a component
 
 ```scss
-@import 'path/to/node_modules/middlebury/src/scss/components/button/button';
+@import 'path/to/node_modules/middlebury-design-system/scss/components/button/button';
 ```
 
 ### Global variables
@@ -48,7 +47,7 @@ Using the Sass files infers usage of the SCSS pre-processor. All Sass files use 
 Most components and all global settings are stored in a single variables file so your project can reconfigure bits and pieces as you prefer.
 
 ```scss
-@import 'path/to/node_modules/middlebury/src/scss/variables';
+@import 'path/to/node_modules/middlebury-design-system/scss/variables';
 ```
 
 
@@ -72,7 +71,7 @@ const Toggler = require('middlebury').Toggler
 <html>
   <body>
     <!-- Put HTML snippets of components here... -->
-    <script src="node_modules/middlebury/dist/js/middlebury.min.js"></script>
+    <script src="node_modules/middlebury/dist/js/mds.min.js"></script>
   </body>
 </html>
 ```
