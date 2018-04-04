@@ -227,6 +227,15 @@ $docs-header-width: 20rem;
     margin-top: 0;
   }
 
+  > blockquote {
+    border-left: 4px solid $light-blue;
+    background-color: $lighter-blue;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   a {
     text-decoration: underline;
     &:hover {
