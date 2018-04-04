@@ -202,6 +202,12 @@ $btn-transition: color 0.2s, background-color 0.2s;
 
 // Forms
 
+$label-font-size: 16px;
+$label-font-weight: $font-weight-semibold;
+$label-margin-bottom: 0.5rem;
+
+$form-group-margin-bottom: 2rem;
+
 // input size default
 $input-padding-y: $input-btn-padding-y;
 $input-padding-x: $input-btn-padding-y;
@@ -216,11 +222,11 @@ $input-padding-x-sm: $input-btn-padding-x-sm;
 $input-padding-y-lg: $input-btn-padding-y-lg;
 $input-padding-x-lg: $input-btn-padding-x-lg;
 
-$input-bg: $warm-gray;
-$input-disabled-bg: $warm-gray;
+$input-bg: $white;
+$input-disabled-bg: $gray-light;
 
 $input-color: $black;
-$input-border-color: $border-color;
+$input-border-color: $black;
 $input-border-width: $input-btn-border-width;
 $input-border-radius: $input-btn-border-radius;
 

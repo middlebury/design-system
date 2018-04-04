@@ -65,7 +65,7 @@ Group multiple checkboxes and radios with fieldset and legend since each input s
 
 ```html example
 <fieldset class="form-fieldset">
-  <legend class="form-legend">Status</legend>
+  <legend class="form-fieldset__legend">Status</legend>
 
   <div class="form-check">
     <input type="checkbox" name="status" class="form-check__input" id="open">
@@ -86,7 +86,7 @@ Group multiple checkboxes and radios with fieldset and legend since each input s
 
 ```html example
 <fieldset class="form-fieldset">
-  <legend class="form-legend">Frequency</legend>
+  <legend class="form-fieldset__legend">Frequency</legend>
 
   <div class="form-check">
     <input type="radio" name="frequency" class="form-check__input" id="daily">
@@ -101,6 +101,15 @@ Group multiple checkboxes and radios with fieldset and legend since each input s
     <label for="monthly" class="form-check__label">Monthly</label>
   </div>
 </fieldset>
+```
+
+## File browser
+
+```html example
+<div class="form-file">
+  <input type="file" class="form-file__input" id="customFile">
+  <label class="form-file__label button button--primary" for="customFile">Choose file</label>
+</div>
 ```
 
 ## Help text
@@ -130,10 +139,10 @@ Use `<abbr title="required">*</abbr>` to denote required fields.
 Display error messages alongside their field.
 
 ```html example
-<div class="form-group has-error">
+<div class="form-group">
   <label for="email" class="form-label">Email</label>
-  <input type="email" class="form-control" value="test example.com" required>
-  <p class="form-text">Email is not valid</p>
+  <input type="email" class="form-control form-control--is-error" value="test example.com" required>
+  <p class="form-feedback form-feedback--is-error">Email is not valid</p>
 </div>
 ```
 
