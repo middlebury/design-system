@@ -3,8 +3,10 @@
 
 @import 'global';
 
-@import '../../node_modules/bootstrap/scss/mixins';
-// @import '../../node_modules/bootstrap/scss/grid';
+@import '../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../node_modules/bootstrap/scss/mixins/clearfix';
+@import '../../node_modules/bootstrap/scss/mixins/grid';
+@import '../../node_modules/bootstrap/scss/mixins/screen-reader';
 
 @import 'objects/grid/grid';
 
