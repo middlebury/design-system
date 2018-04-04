@@ -27,7 +27,7 @@ const SassDoc = ({doc}) => {
 
 class DocPageTemplate extends Component {
   render() {
-    const {doc, icons, colors, sassdoc} = this.props.data;
+    const {site, doc, icons, colors, sassdoc} = this.props.data;
 
     const {html, tableOfContents} = doc;
     const {
@@ -38,6 +38,9 @@ class DocPageTemplate extends Component {
       showIcons,
       showColors
     } = doc.frontmatter;
+
+    const repoUrl = site.siteMetadata.repoUrl.replace('.git', '');
+    const editLink = `${repoUrl}/edit/master/src/scss/${doc.fields.path}`;
 
     return (
       <article className="docs-page">
@@ -66,6 +69,10 @@ class DocPageTemplate extends Component {
               dangerouslySetInnerHTML={{__html: html}}
             />
 
+            <div>
+              <a href={editLink}>Edit on GitHub</a>
+            </div>
+
             {/* <SassDoc doc={sassdoc} /> */}
           </div>
         </section>
@@ -78,10 +85,18 @@ export default DocPageTemplate;
 
 export const pageQuery = graphql`
   query docPage($slug: String!) {
+    site {
+      siteMetadata {
+        repoUrl
+      }
+    }
     doc: markdownRemark(fields: {slug: {eq: $slug}}) {
       id
       html
       tableOfContents
+      fields {
+        path
+      }
       frontmatter {
         title
         desc

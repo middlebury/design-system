@@ -54,10 +54,20 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   // adds the slug field so it can be used in createPages
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({node, getNode});
+    const {relativePath} = getNode(node.parent);
+
+    // used for doc posts
     createNodeField({
       name: 'slug',
       node,
       value: node.frontmatter.path || value
+    });
+
+    // used to create GitHub edit link
+    createNodeField({
+      node,
+      name: 'path',
+      value: relativePath
     });
   }
 };
