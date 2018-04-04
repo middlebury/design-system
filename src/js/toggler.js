@@ -1,4 +1,4 @@
-const forEach = (items, cb) => [].forEach.call(items, cb);
+import forEach from './utils/forEach';
 
 class Toggler {
   constructor(elem) {
