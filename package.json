@@ -87,6 +87,10 @@
     {
       "path": "./dist/css/*.css",
       "maxSize": "10 kB"
+    },
+    {
+      "path": "./dist/js/*.js",
+      "maxSize": "10 kB"
     }
   ]
 }
