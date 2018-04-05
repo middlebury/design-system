@@ -5,13 +5,6 @@ path: components/button
 group: components
 ---
 
-## Examples
-
-The base button class has basic styles but is not recommended to use alone. Use a primary or secondary button modifier with it.
-
-`preview:components/button/button.html`
-`embed:components/button/button.html`
-
 ### Primary
 `preview:components/button/button--primary.html`
 `embed:components/button/button--primary.html`
