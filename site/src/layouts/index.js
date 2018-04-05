@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 
 import '../styles/docs.scss';
 
-import '../../../src/js';
-
 import 'prism-themes/themes/prism-ghcolors.css';
 
 import Header from '../components/Header';
