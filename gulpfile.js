@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
@@ -57,13 +58,24 @@ gulp.task('serve', () =>
  * Move html files to demo folder so they can be viewed with browser sync.
  */
 
-gulp.task('html:dev', () =>
-  gulp
+gulp.task('html:dev', ['build:icons'], () => {
+  const icons = fs.readFileSync('./dist/icons/mds-icons.svg', 'utf-8');
+
+  return gulp
     .src('./src/scss/**/*.html')
-    .pipe(wrap({src: './src/template.html'}))
+    .pipe(
+      wrap(
+        {
+          src: './src/template.html'
+        },
+        {
+          icons
+        }
+      )
+    )
     .pipe(gulp.dest('./demo/'))
-    .pipe(browserSync.stream())
-);
+    .pipe(browserSync.stream());
+});
 
 /**
  * Sass tasks
