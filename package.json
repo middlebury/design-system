@@ -50,7 +50,7 @@
     "prebuild": "npm run clean",
     "prepublishOnly": "npm run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "npm run build && bundlesize"
+    "test": "bundlesize"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
