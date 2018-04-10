@@ -12,7 +12,7 @@ node_modules/
 .env
 .cache
 public
-scss
+/scss
 umd
 es
 dist
