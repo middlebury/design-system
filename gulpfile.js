@@ -20,6 +20,13 @@ const rollup = require('rollup');
 const rollupBabel = require('rollup-plugin-babel');
 const rollupResolve = require('rollup-plugin-node-resolve');
 
+const docsBundle = {
+  file: './site/static/mds.js',
+  format: 'iife',
+  name: 'MDS',
+  sourcemap: true
+};
+
 /**
  * Clean
  *
@@ -145,12 +152,16 @@ gulp.task('scripts:dev', () =>
       ]
     })
     .then(bundle =>
-      bundle.write({
-        file: './demo/js/demo.js',
-        format: 'iife',
-        name: 'MDS',
-        sourcemap: true
-      })
+      // TODO: figure out how to only build one and import it into gatsby site
+      Promise.all([
+        bundle.write({
+          file: './demo/js/demo.js',
+          format: 'iife',
+          name: 'MDS',
+          sourcemap: true
+        }),
+        bundle.write(docsBundle)
+      ])
     )
     .then(() => {
       browserSync.reload();
@@ -196,12 +207,15 @@ gulp.task('scripts:rollup', () =>
       ]
     })
     .then(bundle =>
-      bundle.write({
-        file: './dist/js/mds.js',
-        format: 'iife',
-        name: 'MDS',
-        sourcemap: true
-      })
+      Promise.all([
+        bundle.write({
+          file: './dist/js/mds.js',
+          format: 'iife',
+          name: 'MDS',
+          sourcemap: true
+        }),
+        bundle.write(docsBundle)
+      ])
     )
 );
 
