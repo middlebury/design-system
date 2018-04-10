@@ -1,0 +1,10 @@
+$bg-colors: (
+  'primary': $brand-primary,
+  'gray-light': $gray-light
+);
+
+@each $name, $hex in $bg-colors {
+  .bg-#{$name} {
+    background-color: $hex;
+  }
+}

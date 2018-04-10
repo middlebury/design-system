@@ -1,0 +1,11 @@
+$text-colors: (
+  'primary': $brand-primary,
+  'secondary': $brand-secondary,
+  'white': $white
+);
+
+@each $name, $hex in $text-colors {
+  .color-#{$name} {
+    color: $hex;
+  }
+}

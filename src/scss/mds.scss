@@ -1,20 +1,22 @@
+@import 'functions';
 @import 'variables';
-@import 'tools/mixins';
-
-@import 'global';
 
 @import '../../node_modules/bootstrap/scss/mixins/breakpoints';
 @import '../../node_modules/bootstrap/scss/mixins/clearfix';
 @import '../../node_modules/bootstrap/scss/mixins/grid';
 @import '../../node_modules/bootstrap/scss/mixins/screen-reader';
 
-@import 'objects/grid/grid';
+@import 'mixins';
+
+@import 'global';
 
 @import 'components/alert/alert';
 @import 'components/breadcrumb/breadcrumb';
 @import 'components/button/button';
 @import 'components/callout/callout-group';
 @import 'components/callout/callout';
+@import 'components/grid/grid';
+@import 'components/icon/icon';
 @import 'components/input-group/input-group';
 @import 'components/media-object/media-object';
 @import 'components/pagination/pagination';
@@ -34,10 +36,6 @@
 @import 'utils/spacing/spacing';
 @import 'utils/text/text';
 
-@import 'scope/typography/typography';
+// @import '../../node_modules/bootstrap/scss/utilities/flex';
 
-.icon {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-}
+@import 'scope/typography/typography';

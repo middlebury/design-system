@@ -1,10 +1,63 @@
+// base
+$btn-color: $black;
+$btn-bg: $white;
+
+// primary
+$btn-primary-bg: $brand-primary;
+$btn-primary-color: $brand-primary;
+$btn-primary-hover-color: $brand-primary;
+$btn-primary-hover-bg: $brand-primary;
+$btn-primary-outline-bg: $brand-primary;
+$btn-primary-outline-color: $brand-primary;
+
+// secondary
+$btn-secondary-bg: $gray-light;
+$btn-secondary-color: $brand-primary;
+$btn-secondary-hover-color: $brand-secondary;
+$btn-secondary-hover-bg: $brand-secondary;
+$btn-secondary-outline-bg: $brand-secondary;
+$btn-secondary-outline-color: $brand-secondary;
+
+// light
+$btn-light-bg: $white;
+$btn-light-color: $black;
+$btn-light-hover-bg: $gray-light;
+$btn-light-hover-color: $black;
+$btn-light-outline-hover-bg: $white;
+$btn-light-outline-hover-color: $brand-primary;
+
+// button size default
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+$btn-line-height: $input-btn-line-height;
+$btn-font-size: 1rem;
+
+// button size small
+$btn-padding-y-sm: $input-btn-padding-y-sm;
+$btn-padding-x-sm: $input-btn-padding-x-sm;
+
+// button size large
+$btn-padding-y-lg: $input-btn-padding-y-lg;
+$btn-padding-x-lg: $input-btn-padding-x-lg;
+
+// button border styles
+$btn-border-width: $input-btn-border-width;
+$btn-border-color: transparent;
+$btn-border-radius: $input-btn-border-radius;
+
+$btn-font-weight: $font-weight-normal;
+$btn-disabled-opacity: 0.5;
+
+$btn-transition: color 0.2s, background-color 0.2s;
+
 .button {
   display: inline-block;
   font-family: $font-family-base;
   text-align: center;
   border: $btn-border-width solid $btn-border-color;
   cursor: pointer;
-  background: $input-bg;
+  background-color: $input-bg;
+  color: $input-color;
   transition: $btn-transition;
   padding: $btn-padding-y $btn-padding-x;
   font-size: $btn-font-size;
@@ -63,7 +116,30 @@
 // Themes
 
 .button--primary {
-  background-color: $green-light;
+  background-color: $brand-primary;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-primary-dark;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    color: $brand-primary;
+    border-color: $brand-primary;
+
+    &:focus,
+    &:hover {
+      color: $white;
+      background-color: $brand-primary;
+    }
+  }
+}
+
+// TODO: change to button--light
+.button--secondary {
+  background-color: $gray-light;
   color: $brand-primary;
 
   &:hover,
@@ -71,28 +147,15 @@
     background-color: $brand-primary;
     color: $white;
   }
-}
-
-// TODO: change to button--light
-.button--secondary {
-  background-color: $white;
-  color: $brand-primary;
-
-  &:hover,
-  &:focus {
-    background-color: $brand-primary-dark;
-    color: $white;
-  }
 
   &.button--outline {
     background-color: transparent;
-    color: $white;
-    border-color: $white;
+    color: $brand-primary;
+    border-color: $gray-light;
 
     &:hover,
     &:focus {
-      background-color: $white;
-      color: $brand-primary;
+      background-color: $gray-light;
     }
   }
 }
