@@ -1,7 +1,7 @@
 # Middlebury Design System
 > Front-end design system for building Middlebury websites 
 
-<!-- [![Build Status](https://img.shields.io/travis/middlebury/middlebury-design-system/master.svg)](https://travis-ci.org/middlebury/middlebury-design-system) -->
+[![Build Status](https://travis-ci.org/middlebury/design-system.svg?branch=master)](https://travis-ci.org/middlebury/design-system)
 <!-- [![npm version](https://img.shields.io/npm/v/middlebury-design-system.svg)](https://www.npmjs.com/package/middlebury-design-system) -->
 [![dependencies Status](https://img.shields.io/david/middlebury/middlebury-design-system.svg)](https://david-dm.org/middlebury/middlebury-design-system)
 [![devDependency Status](https://img.shields.io/david/dev/middlebury/middlebury-design-system.svg)](https://david-dm.org/middlebury/middlebury-design-system?type=dev)
