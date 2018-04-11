@@ -26,5 +26,14 @@ exports.onRouteUpdate = () => {
    * Also adds cache busting based on framework version.
    */
 
-  loadScript(`/mds.js?v=${pkg.version}`, 'mds');
+  // get the bundle from unpkg since there are issues with building it while deploying the site
+  // TODO: store path in some sort of vars since it's used in installation docs
+  const jsUrl =
+    process.env.NODE_ENV === 'production'
+      ? `https://unpkg.com/middlebury-design-system@${
+          pkg.version
+        }/dist/js/mds.min.js`
+      : `/mds.js?v=${pkg.version}`;
+
+  loadScript(jsUrl, 'mds');
 };
