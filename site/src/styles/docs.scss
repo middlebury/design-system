@@ -164,7 +164,7 @@ $docs-header-width: 20rem;
 
 .docs-page__main {
   position: relative;
-  @include media(xl) {
+  @include media(lg) {
     display: flex;
   }
 }
@@ -172,7 +172,7 @@ $docs-header-width: 20rem;
 .docs-page__toc {
   margin-bottom: 3rem;
 
-  @include media(xl) {
+  @include media(lg) {
     position: sticky;
     padding-left: 6rem;
     order: 2;
@@ -184,7 +184,7 @@ $docs-header-width: 20rem;
 }
 
 .docs-page__content {
-  @include media(xl) {
+  @include media(lg) {
     width: 800px;
   }
 }
