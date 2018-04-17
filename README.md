@@ -5,9 +5,9 @@
 [![npm version](https://img.shields.io/npm/v/middlebury-design-system.svg)](https://www.npmjs.com/package/middlebury-design-system)
 [![dependencies Status](https://david-dm.org/middlebury/middlebury-design-system/status.svg)](https://david-dm.org/middlebury/middlebury-design-system)
 [![devDependencies Status](https://david-dm.org/middlebury/middlebury-design-system/dev-status.svg)](https://david-dm.org/middlebury/middlebury-design-system?type=dev)
-[![CSS gzip size](http://img.badgesize.io/middlebury/middlebury-design-system/dist/css/mds.min.css?compression=gzip&label=CSS+gzip+size)](https://github.com/middlebury/middlebury-design-system/tree/master/dist/css/mds.min.css)
-[![JS gzip size](http://img.badgesize.io/middlebury/middlebury-design-system/dist/js/mds.min.js?compression=gzip&label=JS+gzip+size)](https://github.com/middlebury/middlebury-design-system/tree/master/dist/js/mds.min.js)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<!-- [![CSS gzip size](http://img.badgesize.io/middlebury/middlebury-design-system/dist/css/mds.min.css?compression=gzip&label=CSS+gzip+size)](https://github.com/middlebury/middlebury-design-system/tree/master/dist/css/mds.min.css) -->
+<!-- [![JS gzip size](http://img.badgesize.io/middlebury/middlebury-design-system/dist/js/mds.min.js?compression=gzip&label=JS+gzip+size)](https://github.com/middlebury/middlebury-design-system/tree/master/dist/js/mds.min.js) -->
 
 
 ## Quick start
