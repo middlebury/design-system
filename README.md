@@ -2,7 +2,7 @@
 > Front-end design system for building Middlebury websites 
 
 [![Build Status](https://travis-ci.org/middlebury/design-system.svg?branch=master)](https://travis-ci.org/middlebury/design-system)
-<!-- [![npm version](https://img.shields.io/npm/v/middlebury-design-system.svg)](https://www.npmjs.com/package/middlebury-design-system) -->
+[![npm version](https://img.shields.io/npm/v/middlebury-design-system.svg)](https://www.npmjs.com/package/middlebury-design-system)
 [![dependencies Status](https://david-dm.org/middlebury/middlebury-design-system/status.svg)](https://david-dm.org/middlebury/middlebury-design-system)
 [![devDependencies Status](https://david-dm.org/middlebury/middlebury-design-system/dev-status.svg)](https://david-dm.org/middlebury/middlebury-design-system?type=dev)
 [![CSS gzip size](http://img.badgesize.io/middlebury/middlebury-design-system/dist/css/mds.min.css?compression=gzip&label=CSS+gzip+size)](https://github.com/middlebury/middlebury-design-system/tree/master/dist/css/mds.min.css)
