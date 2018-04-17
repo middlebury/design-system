@@ -1,0 +1,27 @@
+/// Caption
+
+$caption-color: $gray !default;
+$caption-font-size: typescale(2) !default;
+
+.type-caption {
+  font-size: $caption-font-size;
+  color: $caption-color;
+}
+
+/// Section title
+
+$section-title-font-size: typescale(3) !default;
+$section-title-font-weight: $font-weight-semibold !default;
+
+.type-section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: $section-title-font-size;
+  font-weight: $section-title-font-size;
+}
+
+@each $name, $size in $typescale {
+  .f#{$name} {
+    font-size: $size;
+  }
+}

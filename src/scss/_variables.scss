@@ -1,15 +1,27 @@
+////
 /// Breakpoints
+////
+
 $screen-sm: 580px;
 $screen-md: 960px;
 $screen-lg: 1200px;
 $screen-xl: 1440px; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
 
+////
 /// Grid configuration
+////
 
-// variable names based on bootstrap v4 grid variables
+// required for bootstrap v4 grid
 $grid-columns: 12;
-$grid-gutter-width: 30px; // TODO: remove this since we have responsive gutters
 $grid-container-width: 1440px;
+
+$grid-gutter-width: 32px; // TODO: remove this since we have responsive gutters
+$grid-gutter-width-lg: 32px; // TODO: remove this since we have responsive gutters
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width,
+  lg: $grid-gutter-width-lg
+);
 
 $grid-breakpoints: (
   xs: 0,
@@ -18,29 +30,35 @@ $grid-breakpoints: (
   lg: $screen-lg
 );
 
-$grid-gutter-widths: (
-  xs: 32px,
-  lg: 80px
-);
-
+////
 /// Spacing
-$spacer: 1rem !default;
-$spacers: () !default;
+////
 
-$spacers: map-merge(
-  (
-    0: 0,
-    1: ($spacer * 0.25),
-    2: ($spacer * 0.5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 3)
-  ),
-  $spacers
+$spacing-0: 0;
+$spacing-1: rem(4);
+$spacing-2: rem(8);
+$spacing-3: rem(16);
+$spacing-4: rem(24);
+$spacing-5: rem(32);
+$spacing-6: rem(64);
+$spacing-7: rem(96);
+
+$spacing: (
+  0: $spacing-0,
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+  7: $spacing-7
 );
 
+////
 /// Colors
-/// @todo all these variables need better names
+////
+
+// @todo all these variables need better names
 
 $light-blue: #97bbd5;
 $lighter-blue: #e5f1fa;
@@ -70,7 +88,9 @@ $info: $lighter-blue;
 $warning: #ffc107;
 $success: forestgreen;
 
+////
 /// Typography
+////
 
 // font families
 $font-family-sans-serif: (
@@ -88,21 +108,53 @@ $font-family-serif: (
   serif
 );
 
-$font-size-base: 1rem;
-$font-family-base: $font-family-sans-serif;
+// type scale
+$typescale-1: rem(12);
+$typescale-2: rem(14);
+$typescale-3: rem(16);
+$typescale-4: rem(18);
+$typescale-5: rem(20);
+$typescale-6: rem(24);
+$typescale-7: rem(28);
+$typescale-8: rem(36);
 
+$typescale: (
+  1: $typescale-1,
+  2: $typescale-2,
+  3: $typescale-3,
+  4: $typescale-4,
+  5: $typescale-5,
+  6: $typescale-6,
+  7: $typescale-7,
+  8: $typescale-8
+);
+
+// font weights
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-$line-height-body: 1.5;
-$line-height-heading: 1.25;
+// line heights
 $line-height-solid: 1;
+$line-height-heading: 1.4;
+$line-height-lead: 1.6;
+$line-height-body: 1.7;
+
+$line-heights: (
+  'body': $line-height-body,
+  'heading': $line-height-heading,
+  'lead': $line-height-lead,
+  'solid': $line-height-solid
+);
+
+// Base
+$font-size-base: 16px !default;
+$line-height-base: $line-height-body !default;
+$font-family-base: $font-family-sans-serif !default;
 
 // Body
-
 $body-bg: $white;
 $body-color: $black;
 
@@ -110,80 +162,79 @@ $body-color: $black;
 $border-width: 1px;
 $border-color: $line-gray;
 
+////
+/// Element styles
+////
+
 // Links
 $link-color: $brand-primary;
 $link-decoration: none;
 $link-hover-color: $brand-primary;
 $link-hover-decoration: underline;
 
-// Typography
-
 // Headings
 $headings-font-family: $font-family-serif;
 $headings-font-weight: $font-weight-medium;
-$headings-font-size: 18px;
-$headings-line-height: 1.2;
+$headings-font-size: typescale(4);
+$headings-line-height: lineheight('heading');
 $headings-margin-bottom: 0;
 
-$h1-font-size: 32px;
-$h1-line-height: $h1-font-size + 10px;
-$h1-margin-top: 4.5rem;
-$h1-margin-bottom: 1.5rem;
+$h1-font-size: typescale(8);
+$h1-margin-top: 0;
+$h1-margin-bottom: spacing(4);
 
-$h2-font-size: 24px;
-$h2-line-height: $h2-font-size + 10px;
-$h2-margin-top: 4rem;
-$h2-margin-bottom: 2rem;
+$h2-font-size: typescale(7);
+$h2-margin-top: spacing(6);
+$h2-margin-bottom: spacing(3);
 
-$h3-font-size: 20px;
-$h3-line-height: $h3-font-size + 10px;
-$h3-margin-top: 2rem;
-$h3-margin-bottom: 1.5rem;
+$h3-font-size: typescale(6);
+$h3-margin-top: spacing(5);
+$h3-margin-bottom: spacing(3);
 
-$h4-font-size: 18px;
-$h4-line-height: $h4-font-size + 10px;
-$h4-margin-top: 1.5rem;
-$h4-margin-bottom: 0.25rem;
+$h4-font-size: typescale(5);
+$h4-margin-top: spacing(4);
+$h4-margin-bottom: spacing(1);
 
-$h5-font-size: 16px;
-$h5-line-height: $h5-font-size + 10px;
-$h5-margin-top: 1.5rem;
-$h5-margin-bottom: 0.25rem;
+$h5-font-size: typescale(3);
+$h5-margin-top: spacing(3);
+$h5-margin-bottom: 0;
 
-$h6-font-size: 14px;
-$h6-line-height: $h6-font-size + 10px;
-$h6-margin-top: 1.5rem;
+$h6-font-size: typescale(2);
+$h6-margin-top: spacing(3);
 $h6-margin-bottom: 0;
 
-// Paragraphs (in typography)
-$paragraph-font-size: 18px;
-$paragraph-line-height: $line-height-body;
-$paragraph-margin-bottom: 1.5rem;
+// Paragraphs
+$paragraph-font-size: typescale(4);
+$paragraph-line-height: lineheight('body');
+$paragraph-margin-bottom: spacing(3);
 
-// Component variables
+////
+/// Component variables
+////
 
 // Lead
-$lead-font-size: 26px;
-$lead-line-height: 38px;
-$lead-margin-bottom: 2rem;
+$lead-font-size: typescale(5);
+$lead-line-height: lineheight('lead');
+$lead-margin-bottom: spacing(4);
 
-/// captions
-$caption-font-size: 14px;
+// captions
+$caption-font-size: typescale(2);
+$caption-color: $gray;
 
 // Shared buttons and forms styles
-$input-btn-padding-y: 0.75rem;
-$input-btn-padding-x: 1.5rem;
+$input-btn-padding-y: spacing(2);
+$input-btn-padding-x: spacing(3);
 $input-btn-line-height: $line-height-body;
 
 $input-btn-border-width: $border-width;
 $input-btn-border-color: $border-color;
 $input-btn-border-radius: 0;
 
-$input-btn-padding-y-sm: 0.5rem;
-$input-btn-padding-x-sm: 1rem;
+$input-btn-padding-y-sm: spacing(2);
+$input-btn-padding-x-sm: spacing(3);
 
-$input-btn-padding-y-lg: 1.5rem;
-$input-btn-padding-x-lg: 1.5rem;
+$input-btn-padding-y-lg: spacing(4);
+$input-btn-padding-x-lg: spacing(4);
 
 // Buttons
 
@@ -191,7 +242,7 @@ $input-btn-padding-x-lg: 1.5rem;
 $btn-padding-y: $input-btn-padding-y;
 $btn-padding-x: $input-btn-padding-x;
 $btn-line-height: $input-btn-line-height;
-$btn-font-size: 1rem;
+$btn-font-size: typescale(3);
 
 // button size small
 $btn-padding-y-sm: $input-btn-padding-y-sm;
@@ -213,17 +264,17 @@ $btn-transition: color 0.2s, background-color 0.2s;
 
 // Forms
 
-$label-font-size: 16px;
+$label-font-size: typescale(2);
 $label-font-weight: $font-weight-semibold;
-$label-margin-bottom: 0.5rem;
+$label-margin-bottom: spacing(2);
 
-$form-group-margin-bottom: 2rem;
+$form-group-margin-bottom: spacing(3);
 
 // input size default
 $input-padding-y: $input-btn-padding-y;
 $input-padding-x: $input-btn-padding-y;
 $input-line-height: $input-btn-line-height;
-$input-font-size: 1rem;
+$input-font-size: typescale(3);
 
 // input size small
 $input-padding-y-sm: $input-btn-padding-y-sm;
@@ -245,12 +296,12 @@ $input-focus-bg: $input-bg;
 $input-focus-border-color: $green-light;
 
 // sections
-$section-title-margin-bottom: 3rem;
+$section-title-margin-bottom: spacing(4);
 
 // component/D8 "Paragraphs"
-$component-margin-bottom: 6rem;
+$component-margin-bottom: spacing(7);
 
 // lists
-$list-item-margin-bottom: 0.5rem;
-$list-item-margin-bottom-md: 2rem;
-$list-item-margin-bottom-lg: 3rem;
+$list-item-margin-bottom: spacing(1);
+$list-item-margin-bottom-md: spacing(2);
+$list-item-margin-bottom-lg: spacing(3);

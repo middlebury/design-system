@@ -15,14 +15,6 @@
   }
 }
 
-@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-
 @mixin section-title($margin-bottom: $section-title-margin-bottom) {
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -36,4 +28,12 @@
 @mixin break-words {
   word-break: break-word;
   hyphens: auto;
+}
+
+@mixin font-size($size) {
+  font-size: typescale($size);
+}
+
+@mixin line-height($size) {
+  line-height: lineheight($size);
 }

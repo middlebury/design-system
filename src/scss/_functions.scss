@@ -1,7 +1,30 @@
-@function rem($px) {
-  @return ($px / $base-font-size) * 1rem;
+@import 'variables';
+
+@function rem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
 }
 
 @function em($px) {
-  @return ($px / $base-font-size) * 1em;
+  @return ($px / $font-size-base) * 1em;
+}
+
+@function from-map($map, $key) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  } @else {
+    @warn '#{$key} is not a step in type scale';
+  }
+}
+
+@function typescale($size) {
+  @return from-map($typescale, $size);
+}
+
+@function spacing($size) {
+  @return from-map($spacing, $size);
+}
+
+@function lineheight($lh) {
+  @return from-map($line-heights, $lh);
 }

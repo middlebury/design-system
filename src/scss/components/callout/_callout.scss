@@ -29,8 +29,7 @@
 }
 
 .callout__title {
-  font-size: $h2-font-size;
-  line-height: $h2-line-height;
+  font-size: typescale(3);
 
   @include media(lg) {
     margin-bottom: 0.5rem;
