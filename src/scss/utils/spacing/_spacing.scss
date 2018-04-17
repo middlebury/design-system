@@ -21,14 +21,14 @@
         .#{$abbrev}l#{$infix}-#{$size} {
           #{$prop}-left: $length !important;
         }
-        // .#{$abbrev}x#{$infix}-#{$size} {
-        //   #{$prop}-right: $length !important;
-        //   #{$prop}-left: $length !important;
-        // }
-        // .#{$abbrev}y#{$infix}-#{$size} {
-        //   #{$prop}-top: $length !important;
-        //   #{$prop}-bottom: $length !important;
-        // }
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+          #{$prop}-left: $length !important;
+        }
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+          #{$prop}-bottom: $length !important;
+        }
       }
     }
 
