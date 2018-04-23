@@ -18,8 +18,8 @@ Key changes from their grid to ours:
 - We use BEM, so `.container-fluid` becomes `.container--fluid` and `.no-gutters` becomes `.row--no-gutters`. All other Bootsrap grid classes are as-is.
 - We have an `.order` [utility class](/utilities/order) but it does not apply to all 12 columns. Most of the time `order-first` and `order-last` will get us what we need.
 
-`preview:objects/grid/grid.html`
-`embed:objects/grid/grid.html`
+`preview:components/grid/grid.html`
+`embed:components/grid/grid.html`
 
 
 ## Container
