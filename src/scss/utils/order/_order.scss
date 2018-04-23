@@ -1,0 +1,13 @@
+// @for $i from 1 through 8 {
+//   .order-#{$i} {
+//     order: $i;
+//   }
+// }
+
+.order-first {
+  order: -1;
+}
+
+.order-last {
+  order: 9999;
+}
