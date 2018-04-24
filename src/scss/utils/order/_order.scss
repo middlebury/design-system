@@ -4,10 +4,15 @@
 //   }
 // }
 
-.order-first {
-  order: -1;
-}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  @include media-breakpoint-up($breakpoint) {
+    .order#{$infix}-first {
+      order: -1;
+    }
 
-.order-last {
-  order: 9999;
+    .order#{$infix}-last {
+      order: 9999;
+    }
+  }
 }
