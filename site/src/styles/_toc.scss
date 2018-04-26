@@ -1,0 +1,26 @@
+.docs-toc {
+  padding-left: 1rem;
+  border-left: 1px solid $gray-light;
+
+  ul {
+    // list-style: decimal;
+
+    li {
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
+
+.docs-toc__title {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}

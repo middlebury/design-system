@@ -1,0 +1,35 @@
+.docs-header {
+  background-color: $brand-primary;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $docs-header-width;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.docs-site-title {
+  color: $white;
+  font-size: 18px;
+  font-family: $font-family-serif;
+  font-weight: $font-weight-normal;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.docs-version {
+  display: block;
+  color: $white;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.docs-github-link {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid $white;
+  display: block;
+  color: $white;
+}

@@ -1,0 +1,58 @@
+.docs-page-header {
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.docs-page-header__group {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: $gray;
+  margin-bottom: 0.5rem;
+}
+
+.docs-page-header__title {
+  font-size: 36px;
+  margin-bottom: 0.5rem;
+}
+
+.docs-page-header__desc {
+  font-size: 24px;
+}
+
+.docs-page-header__badge {
+  font-size: 12px;
+  background-color: $brand-secondary;
+  font-weight: $font-weight-semibold;
+  color: $white;
+  padding: 0.5rem;
+  line-height: 1;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+.docs-page__main {
+  position: relative;
+  @include media(lg) {
+    display: flex;
+  }
+}
+
+.docs-page__toc {
+  margin-bottom: 3rem;
+
+  @include media(lg) {
+    position: sticky;
+    padding-left: 6rem;
+    order: 2;
+    top: 0;
+    right: 2rem;
+    align-self: flex-start;
+    padding-top: 1rem;
+  }
+}
+
+.docs-page__content {
+  @include media(lg) {
+    width: 800px;
+  }
+}

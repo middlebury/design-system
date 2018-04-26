@@ -1,0 +1,27 @@
+// code previews
+.gatsby-html-example,
+.gatsby-code-preview {
+  margin-top: 2rem;
+  // box-shadow: 1px 1px 4px rgba(black, 0.2);
+  border: 1px solid $gray-light;
+  padding: 2rem;
+}
+
+.gatsby-highlight {
+  margin-bottom: 4rem;
+}
+
+pre[class*='language-'] {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+}
+
+[class*='gatsby-code-preview--grid'] {
+  [class*='col-'] {
+    text-align: center;
+    background-color: $gray-light;
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}

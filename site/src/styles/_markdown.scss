@@ -1,0 +1,81 @@
+// TODO: use .typography somehow without affecting live code previews
+.docs-markdown {
+  max-width: 50em;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > blockquote {
+    border-left: 4px solid $light-blue;
+    background-color: $lighter-blue;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  > table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    td,
+    th {
+      border: 1px solid $gray-light;
+      padding: 0.5rem;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+    }
+  }
+
+  > h2,
+  > h3,
+  > h4 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  > p {
+    margin-bottom: 1rem;
+  }
+
+  > ul,
+  > ol {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  > ul {
+    list-style: disc;
+  }
+
+  > ol {
+    list-style: decimal;
+  }
+
+  li > code,
+  p > code {
+    // background-color: $gray-light;
+    // border: 1px solid #ccc;
+    padding: 2px;
+    // border-radius: 4px;
+    white-space: nowrap;
+    background: $lighter-blue;
+    font-size: 14px;
+  }
+}
