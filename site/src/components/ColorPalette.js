@@ -4,6 +4,49 @@ import colorable from 'colorable';
 import CopyButton from './CopyButton';
 import HoverContent from './HoverContent';
 
+const ContrastTable = ({ hex, colors }) => (
+  <table className="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Hex</th>
+        <th>Contrast</th>
+        <th>AA</th>
+        <th>AAA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {colors.combinations.map(
+        ({
+          accessibility: { aa, aaa },
+          contrast,
+          hex: compatHex,
+          name: compatName
+        }) => (
+          <tr key={compatName}>
+            <td
+              style={{
+                background: hex,
+                color: compatHex
+              }}
+            >
+              {compatName}
+            </td>
+            <td>{compatHex}</td>
+            <td>{contrast.toFixed(2)}</td>
+            <td style={{ color: aa ? 'green' : 'red' }}>
+              {aa ? 'Pass' : 'Fail'}
+            </td>
+            <td style={{ color: aaa ? 'green' : 'red' }}>
+              {aaa ? 'Pass' : 'Fail'}
+            </td>
+          </tr>
+        )
+      )}
+    </tbody>
+  </table>
+);
+
 class ColorSwatch extends Component {
   state = {
     isOpen: false
@@ -42,46 +85,7 @@ class ColorSwatch extends Component {
         <p className="docs-colors__hex">{hex}</p>
         <p className="docs-colors__name mb-1">{name}</p>
         <div style={{ display: isOpen ? 'block' : 'none' }}>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Hex</th>
-                <th>Contrast</th>
-                <th>AA</th>
-                <th>AAA</th>
-              </tr>
-            </thead>
-            <tbody>
-              {a11yColors.combinations.map(
-                ({
-                  accessibility: { aa, aaa },
-                  contrast,
-                  hex: compatHex,
-                  name: compatName
-                }) => (
-                  <tr key={compatName}>
-                    <td
-                      style={{
-                        background: hex,
-                        color: compatHex
-                      }}
-                    >
-                      {compatName}
-                    </td>
-                    <td>{compatHex}</td>
-                    <td>{contrast.toFixed(2)}</td>
-                    <td style={{ color: aa ? 'green' : 'red' }}>
-                      {aa ? 'Pass' : 'Fail'}
-                    </td>
-                    <td style={{ color: aaa ? 'green' : 'red' }}>
-                      {aaa ? 'Pass' : 'Fail'}
-                    </td>
-                  </tr>
-                )
-              )}
-            </tbody>
-          </table>
+          <ContrastTable hex={hex} colors={a11yColors} />
         </div>
       </div>
     );
