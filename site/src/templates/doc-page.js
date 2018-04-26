@@ -1,21 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import ColorPalette from '../components/ColorPalette';
 import IconLibrary from '../components/IconLibrary';
 
-const TableOfContents = ({toc}) => (
+const TableOfContents = ({ toc }) => (
   <nav className="docs-toc">
     <h2 className="docs-toc__title">Table of contents</h2>
     <div
       className="docs-toc__content"
-      dangerouslySetInnerHTML={{__html: toc}}
+      dangerouslySetInnerHTML={{ __html: toc }}
     />
   </nav>
 );
 
-const SassDoc = ({doc}) => {
-  const {description, name, type} = doc;
+const SassDoc = ({ doc }) => {
+  const { description, name, type } = doc;
   return (
     <div>
       <p>{type}</p>
@@ -27,9 +27,9 @@ const SassDoc = ({doc}) => {
 
 class DocPageTemplate extends Component {
   render() {
-    const {site, doc, icons, colors, sassdoc} = this.props.data;
+    const { site, doc, icons, colors, sassdoc } = this.props.data;
 
-    const {html, tableOfContents} = doc;
+    const { html, tableOfContents } = doc;
     const {
       title,
       desc,
@@ -66,7 +66,7 @@ class DocPageTemplate extends Component {
 
             <div
               className="docs-markdown"
-              dangerouslySetInnerHTML={{__html: html}}
+              dangerouslySetInnerHTML={{ __html: html }}
             />
 
             <div>
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
         repoUrl
       }
     }
-    doc: markdownRemark(fields: {slug: {eq: $slug}}) {
+    doc: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       tableOfContents
@@ -106,7 +106,7 @@ export const pageQuery = graphql`
         showColors # defines whether or not to show colors on page
       }
     }
-    icons: allSvg(filter: {id: {regex: "/icons/"}}) {
+    icons: allSvg(filter: { id: { regex: "/icons/" } }) {
       edges {
         node {
           id

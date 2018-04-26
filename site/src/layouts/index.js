@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 class Layout extends Component {
   render() {
-    const {children, data} = this.props;
+    const { children, data } = this.props;
     const {
       title,
       description,
@@ -54,7 +54,7 @@ export const query = graphql`
       }
     }
     nav: allMarkdownRemark(
-      filter: {frontmatter: {path: {ne: null}, group: {ne: null}}}
+      filter: { frontmatter: { path: { ne: null }, group: { ne: null } } }
     ) {
       group(field: frontmatter___group) {
         fieldValue

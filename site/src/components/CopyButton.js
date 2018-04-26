@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import React, { Component } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class CopyButton extends Component {
   state = {
@@ -7,7 +7,7 @@ class CopyButton extends Component {
   };
 
   handleCopy = event => {
-    this.setState({copied: true});
+    this.setState({ copied: true });
 
     setTimeout(() => {
       this.setState({

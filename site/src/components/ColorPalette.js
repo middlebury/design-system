@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import colorable from 'colorable';
 
 import CopyButton from './CopyButton';
@@ -9,8 +9,8 @@ class ColorSwatch extends Component {
     isOpen: false
   };
   render() {
-    const {name, hex, id, a11yColors} = this.props;
-    const {isOpen} = this.state;
+    const { name, hex, id, a11yColors } = this.props;
+    const { isOpen } = this.state;
 
     const content = (
       <div>
@@ -41,7 +41,7 @@ class ColorSwatch extends Component {
         </HoverContent>
         <p className="docs-colors__hex">{hex}</p>
         <p className="docs-colors__name mb-1">{name}</p>
-        <div style={{display: isOpen ? 'block' : 'none'}}>
+        <div style={{ display: isOpen ? 'block' : 'none' }}>
           <table className="table">
             <thead>
               <tr>
@@ -55,7 +55,7 @@ class ColorSwatch extends Component {
             <tbody>
               {a11yColors.combinations.map(
                 ({
-                  accessibility: {aa, aaa},
+                  accessibility: { aa, aaa },
                   contrast,
                   hex: compatHex,
                   name: compatName
@@ -71,10 +71,10 @@ class ColorSwatch extends Component {
                     </td>
                     <td>{compatHex}</td>
                     <td>{contrast.toFixed(2)}</td>
-                    <td style={{color: aa ? 'green' : 'red'}}>
+                    <td style={{ color: aa ? 'green' : 'red' }}>
                       {aa ? 'Pass' : 'Fail'}
                     </td>
-                    <td style={{color: aaa ? 'green' : 'red'}}>
+                    <td style={{ color: aaa ? 'green' : 'red' }}>
                       {aaa ? 'Pass' : 'Fail'}
                     </td>
                   </tr>
@@ -88,16 +88,16 @@ class ColorSwatch extends Component {
   }
 }
 
-const ColorPalette = ({colors}) => {
-  const _colors = colors.edges.map(({node}) => ({...node}));
+const ColorPalette = ({ colors }) => {
+  const _colors = colors.edges.map(({ node }) => ({ ...node }));
   const colorsObj = _colors.reduce(
-    (obj, color) => ({...obj, [color.name]: color.hex}),
+    (obj, color) => ({ ...obj, [color.name]: color.hex }),
     {}
   );
-  const a11yColors = colorable(colorsObj, {compact: true});
+  const a11yColors = colorable(colorsObj, { compact: true });
   return (
     <div className="docs-colors">
-      {_colors.map(({name, hex, id}) => (
+      {_colors.map(({ name, hex, id }) => (
         <ColorSwatch
           key={id}
           hex={hex}
