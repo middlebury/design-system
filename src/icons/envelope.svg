@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>envelope</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="envelope" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M24,4.30170828 L24,18 C24,19.1045695 23.1045695,20 22,20 L2,20 C0.8954305,20 1.3527075e-16,19.1045695 0,18 L0,4.30170828 L12,14.3017083 L24,4.30170828 Z M2.76204994,4 L21.2379501,4 L12,11.6982917 L2.76204994,4 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</svg>
