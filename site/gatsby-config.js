@@ -12,7 +12,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        includePaths: [`${__dirname}/../src/scss`]
+      }
+    },
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-source-filesystem',
