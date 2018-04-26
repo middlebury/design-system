@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Responsive flexbox order utils
+- New icons: caret-left, caret-down, caret-right, caret-up, chevron-up, chevron-down, calendar-alt
+
+### Changed
+- All icons redrawn
+- Calendar icon no longer has number on it. Instead, there is a `calendar-alt` with the number.
+
+### Breaking
+- renamed icon `map` to `map-marker`
+- renamed icon `email` to `envelope`
+- renamed icon `close` to `times`
+- renamed `arrow-*` to `chevron-*`
+
 
 ## [0.3.0] - 2018-04-24
 ### Added
