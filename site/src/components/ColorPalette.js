@@ -3,6 +3,7 @@ import colorable from 'colorable';
 
 import CopyButton from './CopyButton';
 import HoverContent from './HoverContent';
+import Button from './Button';
 
 const ContrastTable = ({ hex, colors }) => (
   <table className="table">
@@ -58,12 +59,13 @@ class ColorSwatch extends Component {
     const content = (
       <div>
         <CopyButton value={hex} label="Copy hex" />
-        <button
-          onClick={e => this.setState({isOpen: !isOpen})}
-          className="button button--link button--sm"
+        <Button
+          onClick={e => this.setState({ isOpen: !isOpen })}
+          kind="link"
+          size="sm"
         >
           {isOpen ? 'Hide' : 'See'} color contrast
-        </button>
+        </Button>
       </div>
     );
 
