@@ -1,25 +1,36 @@
 .docs-icons {
-  display: flex;
-  flex-wrap: wrap;
   margin-bottom: 2rem;
-  margin: -0.5rem;
 }
 
 .docs-icons__list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .docs-icons__item {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  margin: 0.5rem;
-  width: 100px;
-  height: 100px;
+  flex: 1 1 10rem;
+  width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.docs-icons__card {
+  height: 10rem;
+  background-color: $gray-lighter;
+  position: relative;
   text-align: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: calc(100% / 4 - 1rem);
+  justify-content: center;
 }
 
 .docs-icons__actions {
+  background: $green;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
