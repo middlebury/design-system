@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
+import classnames from 'classnames';
+
+import Button from './Button';
+
 class CopyButton extends Component {
   state = {
     copied: false
@@ -17,12 +21,12 @@ class CopyButton extends Component {
   };
 
   render() {
-    const {label = 'Copy to clipboard', value} = this.props;
+    const { label = 'Copy to clipboard', value, className } = this.props;
     return (
       <CopyToClipboard text={value} onCopy={this.handleCopy}>
-        <button className="button button--outline button--sm">
+        <Button size="sm" outline className={className}>
           {this.state.copied ? 'Copied!' : label}
-        </button>
+        </Button>
       </CopyToClipboard>
     );
   }
