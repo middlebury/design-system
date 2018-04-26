@@ -2,19 +2,34 @@ import React, {Component} from 'react';
 
 class HoverContent extends Component {
   state = {
-    hovered: false
+    isOpen: false
+  };
+
+  show = event => {
+    this.setState({
+      isOpen: true
+    });
+  };
+
+  hide = event => {
+    this.setState({
+      isOpen: false
+    });
   };
 
   render() {
+    const { className, content, children } = this.props;
+    const { isOpen } = this.state;
+
     return (
       <div
-        onMouseEnter={() => this.setState({hovered: true})}
-        onMouseLeave={() => this.setState({hovered: false})}
+        onMouseEnter={this.show}
+        onMouseLeave={this.hide}
         style={{
           position: 'relative'
         }}
       >
-        {this.state.hovered && (
+        {isOpen && (
           <div
             style={{
               position: 'absolute',
@@ -23,10 +38,10 @@ class HoverContent extends Component {
               transform: 'translate(-50%, -50%)'
             }}
           >
-            {this.props.content}
+            {content}
           </div>
         )}
-        <div>{this.props.children}</div>
+        {children}
       </div>
     );
   }
