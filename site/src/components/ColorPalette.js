@@ -57,14 +57,14 @@ class ColorSwatch extends Component {
     const { isOpen } = this.state;
 
     const content = (
-      <div>
-        <CopyButton value={hex} label="Copy hex" />
+      <div className="docs-colors__actions">
+        <CopyButton value={hex} label="Copy HEX" className="mb-1" />
         <Button
           onClick={e => this.setState({ isOpen: !isOpen })}
           kind="link"
           size="sm"
         >
-          {isOpen ? 'Hide' : 'See'} color contrast
+          {isOpen ? 'Hide' : 'Show'} color contrasts
         </Button>
       </div>
     );

@@ -1,14 +1,14 @@
 .docs-colors {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.5rem;
 }
 
 .docs-colors__item {
-  padding: 0.5rem;
   border: 1px solid $border-color;
-  margin: 0.5rem;
-  width: calc(100% / 3 - 1rem);
+  flex: 1 1 14rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
 .docs-colors__swatch {
@@ -16,6 +16,15 @@
   height: 200px;
   box-shadow: inset 0 0 1px rgba(black, 0.5);
   margin-bottom: 0.5rem;
+}
+
+.docs-colors__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 .docs-colors__hex {
