@@ -53,9 +53,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-autolink-headers',
           'gatsby-remark-html-preview',
-          'gatsby-remark-prismjs',
           {
             resolve: 'gatsby-remark-preview-snippet',
             options: {
@@ -69,7 +67,9 @@ module.exports = {
               classPrefix: 'language-',
               directory: `${__dirname}/../src/scss`
             }
-          }
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-autolink-headers'
           // 'gatsby-remark-copy-linked-files',
           // 'gatsby-remark-smartypants'
         ]
