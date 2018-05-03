@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - `button--xl` modifier
 
+### Fixed
+- JS bundle was incorrectly saved as `mds.min..js` instead of `mds.min.js`
+
 ### Breaking
 - Renamed icon `map` to `map-marker`
 - Renamed icon `email` to `envelope`

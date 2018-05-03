@@ -225,7 +225,7 @@ gulp.task('scripts:compiled', ['scripts:rollup'], () =>
     .src('./dist/js/mds.js')
     .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(rename({suffix: '.min.'}))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/js'))
 );
