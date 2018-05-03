@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - renamed icon `email` to `envelope`
 - renamed icon `close` to `times`
 - renamed `arrow-*` to `chevron-*`
+- Added a spacing unit for 48px. This makes spacing-6 48px, spacing-7 become 64px, and spacing-8 become 96px
 
 
 ## [0.3.0] - 2018-04-24
