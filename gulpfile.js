@@ -176,7 +176,7 @@ gulp.task('scripts:umd', () => {
   };
 
   return gulp
-    .src(srcFiles, {base: './src/js'})
+    .src(srcFiles, { base: './src/js' })
     .pipe(babel(babelOpts))
     .pipe(gulp.dest('./umd/'));
 });
@@ -184,11 +184,11 @@ gulp.task('scripts:umd', () => {
 gulp.task('scripts:es', () => {
   const srcFiles = ['./src/**/*.js'];
   const babelOpts = {
-    presets: [['env', {modules: false}]]
+    presets: [['env', { modules: false }]]
   };
 
   return gulp
-    .src(srcFiles, {base: './src/js'})
+    .src(srcFiles, { base: './src/js' })
     .pipe(babel(babelOpts))
     .pipe(gulp.dest('./es'));
 });
@@ -200,7 +200,7 @@ gulp.task('scripts:rollup', () =>
       plugins: [
         rollupBabel({
           exclude: 'node_modules/**',
-          presets: [['env', {modules: false}]],
+          presets: [['env', { modules: false }]],
           plugins: ['external-helpers']
         }),
         rollupResolve()
@@ -253,7 +253,7 @@ const buildSvgs = src =>
     )
     .pipe(
       svgo({
-        plugins: [{removeTitle: true}]
+        plugins: [{ removeTitle: true }]
       })
     );
 
