@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - All icons redrawn
 - Calendar icon no longer has number on it. Instead, there is a `calendar-alt` with the number.
+- Reduced font sizes on small buttons and inputs
+- Increased font size on large buttons and inputs
 
 ### Breaking
 - renamed icon `map` to `map-marker`

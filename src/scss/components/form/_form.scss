@@ -129,10 +129,12 @@ select.form-control {
  */
 
 .form-control--sm {
+  font-size: $input-font-size-sm;
   padding: $input-padding-y-sm $input-padding-x-sm;
 }
 
 .form-control--lg {
+  font-size: $input-font-size-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
 }
 

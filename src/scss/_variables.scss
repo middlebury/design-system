@@ -226,7 +226,8 @@ $caption-color: $gray;
 // Shared buttons and forms styles
 $input-btn-padding-y: spacing(2);
 $input-btn-padding-x: spacing(3);
-$input-btn-line-height: $line-height-body;
+$input-btn-font-size: typescale(3);
+$input-btn-line-height: lineheight('body');
 
 $input-btn-border-width: $border-width;
 $input-btn-border-color: $border-color;
@@ -234,9 +235,11 @@ $input-btn-border-radius: 0;
 
 $input-btn-padding-y-sm: spacing(2);
 $input-btn-padding-x-sm: spacing(3);
+$input-btn-font-size-sm: typescale(2);
 
 $input-btn-padding-y-lg: spacing(4);
 $input-btn-padding-x-lg: spacing(4);
+$input-btn-font-size-lg: typescale(4);
 
 // Buttons
 
@@ -244,15 +247,17 @@ $input-btn-padding-x-lg: spacing(4);
 $btn-padding-y: $input-btn-padding-y;
 $btn-padding-x: $input-btn-padding-x;
 $btn-line-height: $input-btn-line-height;
-$btn-font-size: typescale(3);
+$btn-font-size: $input-btn-font-size;
 
 // button size small
 $btn-padding-y-sm: $input-btn-padding-y-sm;
 $btn-padding-x-sm: $input-btn-padding-x-sm;
+$btn-font-size-sm: $input-btn-font-size-sm;
 
 // button size large
 $btn-padding-y-lg: $input-btn-padding-y-lg;
 $btn-padding-x-lg: $input-btn-padding-x-lg;
+$btn-font-size-lg: $input-btn-font-size-lg;
 
 // button border styles
 $btn-border-width: $input-btn-border-width;
@@ -276,15 +281,17 @@ $form-group-margin-bottom: spacing(3);
 $input-padding-y: $input-btn-padding-y;
 $input-padding-x: $input-btn-padding-y;
 $input-line-height: $input-btn-line-height;
-$input-font-size: typescale(3);
+$input-font-size: $input-btn-font-size;
 
 // input size small
 $input-padding-y-sm: $input-btn-padding-y-sm;
 $input-padding-x-sm: $input-btn-padding-x-sm;
+$input-font-size-sm: $input-btn-font-size-sm;
 
 // input size large
 $input-padding-y-lg: $input-btn-padding-y-lg;
 $input-padding-x-lg: $input-btn-padding-x-lg;
+$input-font-size-lg: $input-btn-font-size-lg;
 
 $input-bg: $white;
 $input-disabled-bg: $gray-light;
