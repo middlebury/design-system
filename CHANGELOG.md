@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Reduced font sizes on small buttons and inputs
 - Increased font size on large buttons and inputs
 
+### Removed
+- `button--xl` modifier
+
 ### Breaking
 - renamed icon `map` to `map-marker`
 - renamed icon `email` to `envelope`
