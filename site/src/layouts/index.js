@@ -33,7 +33,11 @@ class Layout extends Component {
         />
         <div className="docs-container">
           <main className="docs-main">{children()}</main>
-          <Footer bugsUrl={bugsUrl} version={version} />
+          <Footer
+            bugsUrl={bugsUrl}
+            version={version}
+            buildTime={data.site.buildTime}
+          />
         </div>
       </div>
     );
@@ -52,6 +56,7 @@ export const query = graphql`
         description
         version
       }
+      buildTime(formatString: "MMMM D, YYYY")
     }
     nav: allMarkdownRemark(
       filter: { frontmatter: { path: { ne: null }, group: { ne: null } } }

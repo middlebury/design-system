@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Footer = ({version, bugsUrl}) => (
+const Footer = ({ version, bugsUrl, buildTime }) => (
   <footer className="docs-footer">
     <div className="docs-footer__meta">
       <p>v{version}</p>
-      <p>Website last updated {new Date().toLocaleDateString()}</p>
+      <p>Website last updated {buildTime}</p>
     </div>
     <div className="docs-footer__contact">
       <p>
