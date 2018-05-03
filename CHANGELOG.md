@@ -19,10 +19,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `button--xl` modifier
 
 ### Breaking
-- renamed icon `map` to `map-marker`
-- renamed icon `email` to `envelope`
-- renamed icon `close` to `times`
-- renamed `arrow-*` to `chevron-*`
+- Renamed icon `map` to `map-marker`
+- Renamed icon `email` to `envelope`
+- Renamed icon `close` to `times`
+- Renamed `arrow-*` to `chevron-*`
 - Added a spacing unit for 48px. This makes spacing-6 48px, spacing-7 become 64px, and spacing-8 become 96px
 
 
