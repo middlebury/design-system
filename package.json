@@ -52,7 +52,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "install:site": "cd site && yarn",
     "build:site": "cd site && yarn build",
-    "netlify": "yarn build && yarn install:site && yarn build:site",
+    "netlify": "yarn gulp build:icons && yarn install:site && yarn build:site",
     "test": "bundlesize"
   },
   "dependencies": {
