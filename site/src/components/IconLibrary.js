@@ -22,7 +22,7 @@ const IconLibrary = ({ icons }) => (
               <Button
                 is="a"
                 href={getIconUrl(node.name)}
-                download={`${name}.svg`}
+                download={`${node.name}.svg`}
                 kind="light"
                 outline
               >
