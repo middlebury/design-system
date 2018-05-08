@@ -2,6 +2,5 @@
   publish = "site/public/"
   command = "npm run netlify"
 
-[context.production]
-  [context.production.environment]
-    YARN_VERSION="1.5.0"
+[build.environment]
+  YARN_VERSION = "1.5.0"
