@@ -16,7 +16,7 @@
 yarn add middlebury-design-system
 
 # NPM
-npm install middlebury-design-system
+npm install --save middlebury-design-system 
 ```
 
 See [install documentation][install] for alternative methods.
