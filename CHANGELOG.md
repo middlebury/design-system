@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Order 0-11 utils
+- Offset-{breakpoint}-0 classes
 - Responsive flexbox order utils
 - New icons: caret-left, caret-down, caret-right, caret-up, chevron-up, chevron-down, calendar-alt
 
