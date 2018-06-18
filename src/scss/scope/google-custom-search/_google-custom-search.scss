@@ -45,7 +45,7 @@
       margin-top: 0;
 
       &:not(.gsc-tabhActive):hover {
-        background-color: $line-gray;
+        background-color: $gray-light;
       }
     }
 
@@ -133,7 +133,7 @@
 
     &:hover {
       text-decoration: none;
-      background-color: $line-gray;
+      background-color: $gray-light;
     }
   }
 

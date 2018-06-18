@@ -62,33 +62,39 @@ $spacing: (
 
 // @todo all these variables need better names
 
-$light-blue: #97bbd5;
-$lighter-blue: #e5f1fa;
+$navy-light: #174872;
+$navy: #0d395f;
+$navy-dark: #022543;
+
+$blue-light: #97bbd5;
+$blue-lighter: #e5f1fa;
+
 $green-dark: #1a8574;
 $green: #1f9f8b;
 $green-light: #23b39c;
-$teal: #017c9f;
 
-$brand-primary: #0d395f;
-$brand-primary-dark: #022543;
-$brand-secondary: #97bbd5;
-$brand-secondary-dark: #174872;
-$brand-tertiary: #0ac3a6;
+$teal: #017c9f;
 
 // shades
 $white: #fff;
 $black: #202020;
+
+// grays
 $gray: #767676;
 $gray-light: #dedede;
-$warm-gray: #e5e4e2;
-$line-gray: #dedede;
-$text-gray: #767676;
+$gray-lighter: #f8f8f8;
 
 // util colors
 $danger: #dc3545;
-$info: $lighter-blue;
+$info: $blue-lighter;
 $warning: #ffc107;
-$success: forestgreen;
+$success: #5e7d31;
+
+// brand colors
+$brand-primary: $navy;
+$brand-primary-dark: $navy-dark;
+$brand-secondary: $green;
+$brand-secondary-dark: $green-dark;
 
 ////
 /// Typography
@@ -162,7 +168,7 @@ $body-color: $black;
 
 // Border styles
 $border-width: 1px;
-$border-color: $line-gray;
+$border-color: $gray-light;
 
 ////
 /// Element styles

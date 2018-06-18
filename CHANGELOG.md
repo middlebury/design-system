@@ -10,18 +10,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Offset-{breakpoint}-0 classes
 - Responsive flexbox order utils
 - New icons: caret-left, caret-down, caret-right, caret-up, chevron-up, chevron-down, calendar-alt
+- New colors: gray-ligher, navy, navy-dark, teal-dark
 
 ### Changed
 - All icons redrawn
 - Calendar icon no longer has number on it. Instead, there is a `calendar-alt` with the number.
 - Reduced font sizes on small buttons and inputs
 - Increased font size on large buttons and inputs
-
-### Removed
-- `button--xl` modifier
+- Revised color variable names for consistency
+- Use Middlebury green color for `$success` instead of `forestgreen`
+- `npm run dev` to `npm start` for local development
 
 ### Fixed
 - JS bundle was incorrectly saved as `mds.min..js` instead of `mds.min.js`
+
+### Removed
+- `button--xl` modifier
+- Various unused colors: `$brand-tertiary`, `$warm-gray`, `$text-gray`
 
 ### Breaking
 - Renamed icon `map` to `map-marker`
@@ -29,6 +34,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Renamed icon `close` to `times`
 - Renamed `arrow-*` to `chevron-*`
 - Added a spacing unit for 48px. This makes spacing-6 48px, spacing-7 become 64px, and spacing-8 become 96px
+- Renamed `$light-blue` to `$blue-light`
+- Renamed `$lighter-blue` to `$blue-lighter`
+- Changed `line-gray` usage to use `gray-light`
 
 
 ## [0.3.0] - 2018-04-24
