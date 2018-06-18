@@ -14,5 +14,11 @@
     .order#{$infix}-last {
       order: 9999;
     }
+
+    @for $i from 0 through $grid-columns {
+      .order#{$infix}-#{$i} {
+        order: $i;
+      }
+    }
   }
 }
