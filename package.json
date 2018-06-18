@@ -44,7 +44,7 @@
     "umd/"
   ],
   "scripts": {
-    "dev": "gulp dev",
+    "start": "gulp dev",
     "build": "gulp build",
     "clean": "gulp clean",
     "prebuild": "yarn clean",
