@@ -249,6 +249,30 @@ $input-btn-font-size-lg: typescale(4);
 
 // Buttons
 
+// base
+$btn-bg: $white;
+$btn-color: $black;
+
+// primary
+$btn-primary-bg: $brand-primary;
+$btn-primary-color: $white;
+$btn-primary-hover-bg: $brand-primary-dark;
+$btn-primary-hover-color: $white;
+
+// secondary
+$btn-secondary-bg: $gray-light;
+$btn-secondary-color: $brand-primary;
+$btn-secondary-hover-bg: $green-light;
+$btn-secondary-hover-color: $brand-primary;
+
+// light
+$btn-light-bg: $white;
+$btn-light-color: $black;
+$btn-light-hover-bg: $gray-light;
+$btn-light-hover-color: $black;
+$btn-light-outline-hover-bg: $white;
+$btn-light-outline-hover-color: $brand-primary;
+
 // button size default
 $btn-padding-y: $input-btn-padding-y;
 $btn-padding-x: $input-btn-padding-x;

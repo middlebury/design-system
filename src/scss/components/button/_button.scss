@@ -1,55 +1,3 @@
-// base
-$btn-color: $black;
-$btn-bg: $white;
-
-// primary
-$btn-primary-bg: $brand-primary;
-$btn-primary-color: $brand-primary;
-$btn-primary-hover-color: $brand-primary;
-$btn-primary-hover-bg: $brand-primary;
-$btn-primary-outline-bg: $brand-primary;
-$btn-primary-outline-color: $brand-primary;
-
-// secondary
-$btn-secondary-bg: $gray-light;
-$btn-secondary-color: $brand-primary;
-$btn-secondary-hover-color: $brand-secondary;
-$btn-secondary-hover-bg: $brand-secondary;
-$btn-secondary-outline-bg: $brand-secondary;
-$btn-secondary-outline-color: $brand-secondary;
-
-// light
-$btn-light-bg: $white;
-$btn-light-color: $black;
-$btn-light-hover-bg: $gray-light;
-$btn-light-hover-color: $black;
-$btn-light-outline-hover-bg: $white;
-$btn-light-outline-hover-color: $brand-primary;
-
-// button size default
-$btn-padding-y: $input-btn-padding-y;
-$btn-padding-x: $input-btn-padding-x;
-$btn-line-height: $input-btn-line-height;
-$btn-font-size: 1rem;
-
-// button size small
-$btn-padding-y-sm: $input-btn-padding-y-sm;
-$btn-padding-x-sm: $input-btn-padding-x-sm;
-
-// button size large
-$btn-padding-y-lg: $input-btn-padding-y-lg;
-$btn-padding-x-lg: $input-btn-padding-x-lg;
-
-// button border styles
-$btn-border-width: $input-btn-border-width;
-$btn-border-color: transparent;
-$btn-border-radius: $input-btn-border-radius;
-
-$btn-font-weight: $font-weight-normal;
-$btn-disabled-opacity: 0.5;
-
-$btn-transition: color 0.2s, background-color 0.2s;
-
 .button {
   display: inline-block;
   font-family: $font-family-base;
@@ -111,58 +59,71 @@ $btn-transition: color 0.2s, background-color 0.2s;
 // Themes
 
 .button--primary {
-  background-color: $brand-primary;
-  color: $white;
+  background-color: $btn-primary-bg;
+  color: $btn-primary-color;
 
   &:hover,
   &:focus {
-    background-color: $brand-primary-dark;
+    background-color: $btn-primary-hover-bg;
+    color: $btn-primary-hover-color;
   }
 
   &.button--outline {
     background-color: transparent;
-    color: $brand-primary;
-    border-color: $brand-primary;
+    color: $btn-primary-bg;
+    border-color: $btn-primary-bg;
 
     &:focus,
     &:hover {
-      color: $white;
-      background-color: $brand-primary;
+      color: $btn-primary-color;
+      background-color: $btn-primary-bg;
     }
   }
 }
 
-// TODO: change to button--light
 .button--secondary {
-  background-color: $gray-light;
-  color: $brand-primary;
+  background-color: $btn-secondary-bg;
+  color: $btn-secondary-color;
 
   &:hover,
   &:focus {
-    background-color: $brand-primary;
-    color: $white;
+    background-color: $btn-secondary-hover-bg;
+    color: $btn-secondary-hover-color;
   }
 
   &.button--outline {
     background-color: transparent;
-    color: $brand-primary;
-    border-color: $gray-light;
+    color: $btn-secondary-bg;
+    border-color: $btn-secondary-bg;
 
     &:hover,
     &:focus {
-      background-color: $gray-light;
+      background-color: $btn-secondary-bg;
+      color: $btn-secondary-color;
     }
   }
 }
 
-.button--tertiary {
-  background-color: $brand-primary;
-  color: $white;
+.button--light {
+  background-color: $btn-light-bg;
+  color: $btn-light-color;
 
   &:hover,
   &:focus {
-    background-color: $green-light;
-    color: $brand-primary;
+    background-color: $btn-light-hover-bg;
+    color: $btn-light-hover-color;
+  }
+
+  &.button--outline {
+    background-color: transparent;
+    border-color: $btn-light-bg;
+    color: $btn-light-bg;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-light-bg;
+      color: $btn-light-color;
+    }
   }
 }
 
