@@ -34,8 +34,7 @@
   ],
   "homepage": "https://design.middlebury.edu/",
   "engines": {
-    "node": ">=8.10.0",
-    "yarn": ">=1.5.0"
+    "node": ">=8.10.0"
   },
   "files": [
     "dist/",
