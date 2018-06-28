@@ -14,11 +14,13 @@ $screen-xl: 1440px; // TODO: Do we need xl? There's no col-xl-* or media(xl) usa
 $grid-columns: 12;
 $container-max-width: 1440px;
 
-$grid-gutter-width: 32px; // TODO: remove this since we have responsive gutters
-$grid-gutter-width-lg: 32px; // TODO: remove this since we have responsive gutters
+$grid-gutter-width: 32px;
+$grid-gutter-width-md: 64px;
+$grid-gutter-width-lg: 80px;
 
 $grid-gutter-widths: (
   xs: $grid-gutter-width,
+  md: $grid-gutter-width-md,
   lg: $grid-gutter-width-lg
 );
 
