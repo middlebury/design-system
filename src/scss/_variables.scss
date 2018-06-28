@@ -11,9 +11,8 @@ $screen-xl: 1440px; // TODO: Do we need xl? There's no col-xl-* or media(xl) usa
 /// Grid configuration
 ////
 
-// required for bootstrap v4 grid
 $grid-columns: 12;
-$grid-container-width: 1440px;
+$container-max-width: 1440px;
 
 $grid-gutter-width: 32px; // TODO: remove this since we have responsive gutters
 $grid-gutter-width-lg: 32px; // TODO: remove this since we have responsive gutters

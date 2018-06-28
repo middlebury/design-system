@@ -1,15 +1,12 @@
+// core
 @import 'functions';
 @import 'variables';
-
-@import '../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import '../../node_modules/bootstrap/scss/mixins/clearfix';
-@import '../../node_modules/bootstrap/scss/mixins/grid';
-@import '../../node_modules/bootstrap/scss/mixins/screen-reader';
-
 @import 'mixins';
 
+// base styles
 @import 'global';
 
+// components
 @import 'components/alert/alert';
 @import 'components/breadcrumb/breadcrumb';
 @import 'components/button/button';
@@ -25,6 +22,7 @@
 @import 'components/table/table';
 @import 'components/form/form';
 
+// utils
 @import 'utils/background/background';
 @import 'utils/clearfix/clearfix';
 @import 'utils/color/color';
@@ -38,4 +36,5 @@
 @import 'utils/text/text';
 @import 'utils/type/type';
 
+// scope
 @import 'scope/typography/typography';

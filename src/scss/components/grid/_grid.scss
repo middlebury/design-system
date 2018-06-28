@@ -1,95 +1,5 @@
-/// Overrides bootstrap v4 make-row to reapply responsive gutters that were in bootstrap v4-alpha.6
-/// @link https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/scss/mixins/_grid.scss
-@mixin make-row($gutters: $grid-gutter-widths) {
-  display: flex;
-  flex-wrap: wrap;
-
-  @each $breakpoint in map-keys($gutters) {
-    @include media-breakpoint-up($breakpoint) {
-      $gutter: map-get($gutters, $breakpoint);
-      margin-right: ($gutter / -2);
-      margin-left: ($gutter / -2);
-    }
-  }
-}
-
-// adds make-gutters from bootstrap alpha.6
-@mixin make-gutters($gutters: $grid-gutter-widths) {
-  @each $breakpoint in map-keys($gutters) {
-    @include media-breakpoint-up($breakpoint) {
-      $gutter: map-get($gutters, $breakpoint);
-      padding-right: ($gutter / 2);
-      padding-left: ($gutter / 2);
-    }
-  }
-}
-
-@mixin make-grid-offsets(
-  $columns: $grid-columns,
-  $breakpoints: $grid-breakpoints
-) {
-  @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
-      // `$columns - 1` because offsetting by the width of an entire row isn't possible
-      @for $i from 0 through ($columns - 1) {
-        @if not($infix == '' and $i == 0) {
-          // Avoid emitting useless .offset-0
-          .offset#{$infix}-#{$i} {
-            @include make-col-offset($i, $columns);
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin make-grid-columns(
-  $columns: $grid-columns,
-  $gutter: $grid-gutter-width,
-  $breakpoints: $grid-breakpoints
-) {
-  @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
-
-    // Allow columns to stretch full width below their breakpoints
-    @for $i from 1 through $columns {
-      .col#{$infix}-#{$i} {
-        @include make-col-ready();
-        @include make-gutters();
-      }
-    }
-
-    .col#{$infix},
-    .col#{$infix}-auto {
-      @include make-col-ready();
-    }
-
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
-      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
-      .col#{$infix} {
-        flex-basis: 0;
-        flex-grow: 1;
-        max-width: 100%;
-      }
-      .col#{$infix}-auto {
-        flex: 0 0 auto;
-        width: auto;
-        max-width: none; // Reset earlier grid tiers
-      }
-
-      @for $i from 1 through $columns {
-        .col#{$infix}-#{$i} {
-          @include make-col($i, $columns);
-        }
-      }
-    }
-  }
-}
-
 .container {
   @include make-container();
-  max-width: $grid-container-width;
 }
 
 .container--fluid {
@@ -104,11 +14,11 @@
   margin-left: 0;
   margin-right: 0;
 
-  > [class^='col'] {
+  > .col,
+  > [class*='col-'] {
     padding-right: 0;
     padding-left: 0;
   }
 }
 
 @include make-grid-columns();
-@include make-grid-offsets();

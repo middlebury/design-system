@@ -55,7 +55,6 @@
     "test": "bundlesize"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
     "normalize.css": "^8.0.0"
   },
   "devDependencies": {

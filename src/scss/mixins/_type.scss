@@ -1,0 +1,32 @@
+@mixin link-border() {
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: transparent;
+    text-decoration: none;
+  }
+}
+
+@mixin section-title($margin-bottom: $section-title-margin-bottom) {
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: $margin-bottom;
+}
+
+@mixin break-words {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@mixin font-size($size) {
+  font-size: typescale($size);
+}
+
+@mixin line-height($size) {
+  line-height: lineheight($size);
+}
