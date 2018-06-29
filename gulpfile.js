@@ -7,6 +7,7 @@ const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const combineMq = require('gulp-combine-mq');
 const uglify = require('gulp-uglify');
 const wrap = require('gulp-wrap');
 const babel = require('gulp-babel');
@@ -112,6 +113,7 @@ gulp.task('styles:compiled', () => {
       .pipe(sourcemaps.init())
       .pipe(sass().on('error', sass.logError))
       .pipe(autoprefixer())
+      .pipe(gulpIf(prod, combineMq()))
       .pipe(gulpIf(prod, cssnano()))
       .pipe(
         rename({
