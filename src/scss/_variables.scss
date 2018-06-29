@@ -2,59 +2,63 @@
 /// Breakpoints
 ////
 
-$screen-sm: 580px;
-$screen-md: 960px;
-$screen-lg: 1200px;
-$screen-xl: 1440px; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
+$screen-sm: 580px !default;
+$screen-md: 960px !default;
+$screen-lg: 1200px !default;
+$screen-xl: 1440px !default; // TODO: Do we need xl? There's no col-xl-* or media(xl) usage
 
 ////
 /// Grid configuration
 ////
 
-$grid-columns: 12;
-$container-max-width: 1440px;
+$grid-columns: 12 !default;
+$container-max-width: 1440px !default;
 
-$grid-gutter-width: 32px;
-$grid-gutter-width-md: 64px;
-$grid-gutter-width-lg: 80px;
+$grid-gutter-width: 32px !default;
+$grid-gutter-width-md: 64px !default;
+$grid-gutter-width-lg: 80px !default;
 
 $grid-gutter-widths: (
   xs: $grid-gutter-width,
   md: $grid-gutter-width-md,
   lg: $grid-gutter-width-lg
-);
+) !default;
 
 $grid-breakpoints: (
   xs: 0,
   sm: $screen-sm,
   md: $screen-md,
   lg: $screen-lg
-);
+) !default;
 
 ////
 /// Spacing
 ////
 
-$spacing-0: 0;
-$spacing-1: rem(4);
-$spacing-2: rem(8);
-$spacing-3: rem(16);
-$spacing-4: rem(24);
-$spacing-5: rem(32);
-$spacing-6: rem(48);
-$spacing-7: rem(64);
-$spacing-8: rem(96);
+$spacing-0: 0 !default;
+$spacing-1: rem(4) !default;
+$spacing-2: rem(8) !default;
+$spacing-3: rem(16) !default;
+$spacing-4: rem(24) !default;
+$spacing-5: rem(32) !default;
+$spacing-6: rem(48) !default;
+$spacing-7: rem(64) !default;
+$spacing-8: rem(96) !default;
 
-$spacing: (
-  0: $spacing-0,
-  1: $spacing-1,
-  2: $spacing-2,
-  3: $spacing-3,
-  4: $spacing-4,
-  5: $spacing-5,
-  6: $spacing-6,
-  7: $spacing-7,
-  8: $spacing-8
+$spacing: () !default;
+$spacing: map-merge(
+  (
+    0: $spacing-0,
+    1: $spacing-1,
+    2: $spacing-2,
+    3: $spacing-3,
+    4: $spacing-4,
+    5: $spacing-5,
+    6: $spacing-6,
+    7: $spacing-7,
+    8: $spacing-8
+  ),
+  $spacing
 );
 
 ////
@@ -63,39 +67,39 @@ $spacing: (
 
 // @todo all these variables need better names
 
-$navy-light: #174872;
-$navy: #0d395f;
-$navy-dark: #022543;
+$navy-light: #174872 !default;
+$navy: #0d395f !default;
+$navy-dark: #022543 !default;
 
-$blue-light: #97bbd5;
-$blue-lighter: #e5f1fa;
+$blue-light: #97bbd5 !default;
+$blue-lighter: #e5f1fa !default;
 
-$green-dark: #1a8574;
-$green: #1f9f8b;
-$green-light: #23b39c;
+$green-dark: #1a8574 !default;
+$green: #1f9f8b !default;
+$green-light: #23b39c !default;
 
-$teal: #017c9f;
+$teal: #017c9f !default;
 
 // shades
-$white: #fff;
-$black: #202020;
+$white: #fff !default;
+$black: #202020 !default;
 
 // grays
-$gray: #767676;
-$gray-light: #dedede;
-$gray-lighter: #f8f8f8;
+$gray: #767676 !default;
+$gray-light: #dedede !default;
+$gray-lighter: #f8f8f8 !default;
 
 // util colors
-$danger: #dc3545;
-$info: $blue-lighter;
-$warning: #ffc107;
-$success: #5e7d31;
+$danger: #dc3545 !default;
+$info: $blue-lighter !default;
+$warning: #ffc107 !default;
+$success: #5e7d31 !default;
 
 // brand colors
-$brand-primary: $navy;
-$brand-primary-dark: $navy-dark;
-$brand-secondary: $green;
-$brand-secondary-dark: $green-dark;
+$brand-primary: $navy !default;
+$brand-primary-dark: $navy-dark !default;
+$brand-secondary: $green !default;
+$brand-secondary-dark: $green-dark !default;
 
 ////
 /// Typography
@@ -108,7 +112,7 @@ $font-family-sans-serif: (
   Tahoma,
   Geneva,
   sans-serif
-);
+) !default;
 
 // prettier-ignore
 $font-family-serif: (
@@ -116,27 +120,31 @@ $font-family-serif: (
   'sentinel ssm b',
   georgia,
   serif
-);
+) !default;
 
 // type scale
-$typescale-1: rem(12);
-$typescale-2: rem(14);
-$typescale-3: rem(16);
-$typescale-4: rem(18);
-$typescale-5: rem(20);
-$typescale-6: rem(24);
-$typescale-7: rem(28);
-$typescale-8: rem(36);
+$typescale-1: rem(12) !default;
+$typescale-2: rem(14) !default;
+$typescale-3: rem(16) !default;
+$typescale-4: rem(18) !default;
+$typescale-5: rem(20) !default;
+$typescale-6: rem(24) !default;
+$typescale-7: rem(28) !default;
+$typescale-8: rem(36) !default;
 
-$typescale: (
-  1: $typescale-1,
-  2: $typescale-2,
-  3: $typescale-3,
-  4: $typescale-4,
-  5: $typescale-5,
-  6: $typescale-6,
-  7: $typescale-7,
-  8: $typescale-8
+$typescale: () !default;
+$typescale: map-merge(
+  (
+    1: $typescale-1,
+    2: $typescale-2,
+    3: $typescale-3,
+    4: $typescale-4,
+    5: $typescale-5,
+    6: $typescale-6,
+    7: $typescale-7,
+    8: $typescale-8
+  ),
+  $typescale
 );
 
 // font weights
@@ -152,11 +160,15 @@ $line-height-heading: 1.4;
 $line-height-lead: 1.6;
 $line-height-body: 1.7;
 
-$line-heights: (
-  'body': $line-height-body,
-  'heading': $line-height-heading,
-  'lead': $line-height-lead,
-  'solid': $line-height-solid
+$line-heights: () !default;
+$line-heights: map-merge(
+  (
+    'body': $line-height-body,
+    'heading': $line-height-heading,
+    'lead': $line-height-lead,
+    'solid': $line-height-solid
+  ),
+  $line-heights
 );
 
 // Base
@@ -165,184 +177,184 @@ $line-height-base: $line-height-body !default;
 $font-family-base: $font-family-sans-serif !default;
 
 // Body
-$body-bg: $white;
-$body-color: $black;
+$body-bg: $white !default;
+$body-color: $black !default;
 
 // Border styles
-$border-width: 1px;
-$border-color: $gray-light;
+$border-width: 1px !default;
+$border-color: $gray-light !default;
 
 ////
 /// Element styles
 ////
 
 // Links
-$link-color: $brand-primary;
-$link-decoration: none;
-$link-hover-color: $brand-primary;
-$link-hover-decoration: underline;
+$link-color: $brand-primary !default;
+$link-decoration: none !default;
+$link-hover-color: $brand-primary !default;
+$link-hover-decoration: underline !default;
 
 // Headings
-$headings-font-family: $font-family-serif;
-$headings-font-weight: $font-weight-medium;
-$headings-font-size: typescale(4);
-$headings-line-height: lineheight('heading');
-$headings-margin-bottom: 0;
+$headings-font-family: $font-family-serif !default;
+$headings-font-weight: $font-weight-medium !default;
+$headings-font-size: typescale(4) !default;
+$headings-line-height: lineheight('heading') !default;
+$headings-margin-bottom: 0 !default;
 
-$h1-font-size: typescale(8);
-$h1-margin-top: 0;
-$h1-margin-bottom: spacing(4);
+$h1-font-size: typescale(8) !default;
+$h1-margin-top: 0 !default;
+$h1-margin-bottom: spacing(4) !default;
 
-$h2-font-size: typescale(7);
-$h2-margin-top: spacing(6);
-$h2-margin-bottom: spacing(3);
+$h2-font-size: typescale(7) !default;
+$h2-margin-top: spacing(6) !default;
+$h2-margin-bottom: spacing(3) !default;
 
-$h3-font-size: typescale(6);
-$h3-margin-top: spacing(5);
-$h3-margin-bottom: spacing(3);
+$h3-font-size: typescale(6) !default;
+$h3-margin-top: spacing(5) !default;
+$h3-margin-bottom: spacing(3) !default;
 
-$h4-font-size: typescale(5);
-$h4-margin-top: spacing(4);
-$h4-margin-bottom: spacing(1);
+$h4-font-size: typescale(5) !default;
+$h4-margin-top: spacing(4) !default;
+$h4-margin-bottom: spacing(1) !default;
 
-$h5-font-size: typescale(3);
-$h5-margin-top: spacing(3);
-$h5-margin-bottom: 0;
+$h5-font-size: typescale(3) !default;
+$h5-margin-top: spacing(3) !default;
+$h5-margin-bottom: 0 !default;
 
-$h6-font-size: typescale(2);
-$h6-margin-top: spacing(3);
-$h6-margin-bottom: 0;
+$h6-font-size: typescale(2) !default;
+$h6-margin-top: spacing(3) !default;
+$h6-margin-bottom: 0 !default;
 
 // Paragraphs
-$paragraph-font-size: typescale(4);
-$paragraph-line-height: lineheight('body');
-$paragraph-margin-bottom: spacing(3);
+$paragraph-font-size: typescale(4) !default;
+$paragraph-line-height: lineheight('body') !default;
+$paragraph-margin-bottom: spacing(3) !default;
 
 ////
 /// Component variables
 ////
 
 // Lead
-$lead-font-size: typescale(5);
-$lead-line-height: lineheight('lead');
-$lead-margin-bottom: spacing(4);
+$lead-font-size: typescale(5) !default;
+$lead-line-height: lineheight('lead') !default;
+$lead-margin-bottom: spacing(4) !default;
 
 // captions
-$caption-font-size: typescale(2);
-$caption-color: $gray;
+$caption-font-size: typescale(2) !default;
+$caption-color: $gray !default;
 
 // Shared buttons and forms styles
-$input-btn-padding-y: spacing(2);
-$input-btn-padding-x: spacing(3);
-$input-btn-font-size: typescale(3);
-$input-btn-line-height: lineheight('body');
+$input-btn-padding-y: spacing(2) !default;
+$input-btn-padding-x: spacing(3) !default;
+$input-btn-font-size: typescale(3) !default;
+$input-btn-line-height: lineheight('body') !default;
 
-$input-btn-border-width: $border-width;
-$input-btn-border-color: $border-color;
-$input-btn-border-radius: 0;
+$input-btn-border-width: $border-width !default;
+$input-btn-border-color: $border-color !default;
+$input-btn-border-radius: 0 !default;
 
-$input-btn-padding-y-sm: spacing(2);
-$input-btn-padding-x-sm: spacing(3);
-$input-btn-font-size-sm: typescale(2);
+$input-btn-padding-y-sm: spacing(2) !default;
+$input-btn-padding-x-sm: spacing(3) !default;
+$input-btn-font-size-sm: typescale(2) !default;
 
-$input-btn-padding-y-lg: spacing(4);
-$input-btn-padding-x-lg: spacing(4);
-$input-btn-font-size-lg: typescale(4);
+$input-btn-padding-y-lg: spacing(4) !default;
+$input-btn-padding-x-lg: spacing(4) !default;
+$input-btn-font-size-lg: typescale(4) !default;
 
 // Buttons
 
 // base
-$btn-bg: $white;
-$btn-color: $black;
+$btn-bg: $white !default;
+$btn-color: $black !default;
 
 // primary
-$btn-primary-bg: $brand-primary;
-$btn-primary-color: $white;
-$btn-primary-hover-bg: $brand-primary-dark;
-$btn-primary-hover-color: $white;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-color: $white !default;
+$btn-primary-hover-bg: $brand-primary-dark !default;
+$btn-primary-hover-color: $white !default;
 
 // secondary
-$btn-secondary-bg: $gray-light;
-$btn-secondary-color: $brand-primary;
-$btn-secondary-hover-bg: $green-light;
-$btn-secondary-hover-color: $brand-primary;
+$btn-secondary-bg: $gray-light !default;
+$btn-secondary-color: $brand-primary !default;
+$btn-secondary-hover-bg: $green-light !default;
+$btn-secondary-hover-color: $brand-primary !default;
 
 // light
-$btn-light-bg: $white;
-$btn-light-color: $black;
-$btn-light-hover-bg: $gray-light;
-$btn-light-hover-color: $black;
-$btn-light-outline-hover-bg: $white;
-$btn-light-outline-hover-color: $brand-primary;
+$btn-light-bg: $white !default;
+$btn-light-color: $black !default;
+$btn-light-hover-bg: $gray-light !default;
+$btn-light-hover-color: $black !default;
+$btn-light-outline-hover-bg: $white !default;
+$btn-light-outline-hover-color: $brand-primary !default;
 
 // button size default
-$btn-padding-y: $input-btn-padding-y;
-$btn-padding-x: $input-btn-padding-x;
-$btn-line-height: $input-btn-line-height;
-$btn-font-size: $input-btn-font-size;
+$btn-padding-y: $input-btn-padding-y !default;
+$btn-padding-x: $input-btn-padding-x !default;
+$btn-line-height: $input-btn-line-height !default;
+$btn-font-size: $input-btn-font-size !default;
 
 // button size small
-$btn-padding-y-sm: $input-btn-padding-y-sm;
-$btn-padding-x-sm: $input-btn-padding-x-sm;
-$btn-font-size-sm: $input-btn-font-size-sm;
+$btn-padding-y-sm: $input-btn-padding-y-sm !default;
+$btn-padding-x-sm: $input-btn-padding-x-sm !default;
+$btn-font-size-sm: $input-btn-font-size-sm !default;
 
 // button size large
-$btn-padding-y-lg: $input-btn-padding-y-lg;
-$btn-padding-x-lg: $input-btn-padding-x-lg;
-$btn-font-size-lg: $input-btn-font-size-lg;
+$btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$btn-padding-x-lg: $input-btn-padding-x-lg !default;
+$btn-font-size-lg: $input-btn-font-size-lg !default;
 
 // button border styles
-$btn-border-width: $input-btn-border-width;
-$btn-border-color: transparent;
-$btn-border-radius: $input-btn-border-radius;
+$btn-border-width: $input-btn-border-width !default;
+$btn-border-color: transparent !default;
+$btn-border-radius: $input-btn-border-radius !default;
 
-$btn-font-weight: $font-weight-normal;
-$btn-disabled-opacity: 0.5;
+$btn-font-weight: $font-weight-normal !default;
+$btn-disabled-opacity: 0.5 !default;
 
-$btn-transition: color 0.2s, background-color 0.2s;
+$btn-transition: color 0.2s, background-color 0.2s !default;
 
 // Forms
 
-$label-font-size: typescale(2);
-$label-font-weight: $font-weight-semibold;
-$label-margin-bottom: spacing(2);
+$label-font-size: typescale(2) !default;
+$label-font-weight: $font-weight-semibold !default;
+$label-margin-bottom: spacing(2) !default;
 
-$form-group-margin-bottom: spacing(3);
+$form-group-margin-bottom: spacing(3) !default;
 
 // input size default
-$input-padding-y: $input-btn-padding-y;
-$input-padding-x: $input-btn-padding-y;
-$input-line-height: $input-btn-line-height;
-$input-font-size: $input-btn-font-size;
+$input-padding-y: $input-btn-padding-y !default;
+$input-padding-x: $input-btn-padding-y !default;
+$input-line-height: $input-btn-line-height !default;
+$input-font-size: $input-btn-font-size !default;
 
 // input size small
-$input-padding-y-sm: $input-btn-padding-y-sm;
-$input-padding-x-sm: $input-btn-padding-x-sm;
-$input-font-size-sm: $input-btn-font-size-sm;
+$input-padding-y-sm: $input-btn-padding-y-sm !default;
+$input-padding-x-sm: $input-btn-padding-x-sm !default;
+$input-font-size-sm: $input-btn-font-size-sm !default;
 
 // input size large
-$input-padding-y-lg: $input-btn-padding-y-lg;
-$input-padding-x-lg: $input-btn-padding-x-lg;
-$input-font-size-lg: $input-btn-font-size-lg;
+$input-padding-y-lg: $input-btn-padding-y-lg !default;
+$input-padding-x-lg: $input-btn-padding-x-lg !default;
+$input-font-size-lg: $input-btn-font-size-lg !default;
 
-$input-bg: $white;
-$input-disabled-bg: $gray-light;
+$input-bg: $white !default;
+$input-disabled-bg: $gray-light !default;
 
-$input-color: $black;
-$input-border-color: $black;
-$input-border-width: $input-btn-border-width;
-$input-border-radius: $input-btn-border-radius;
+$input-color: $black !default;
+$input-border-color: $black !default;
+$input-border-width: $input-btn-border-width !default;
+$input-border-radius: $input-btn-border-radius !default;
 
-$input-focus-bg: $input-bg;
-$input-focus-border-color: $green-light;
+$input-focus-bg: $input-bg !default;
+$input-focus-border-color: $green-light !default;
 
 // sections
-$section-title-margin-bottom: spacing(4);
+$section-title-margin-bottom: spacing(4) !default;
 
 // component/D8 "Paragraphs"
-$component-margin-bottom: spacing(7);
+$component-margin-bottom: spacing(7) !default;
 
 // lists
-$list-item-margin-bottom: spacing(1);
-$list-item-margin-bottom-md: spacing(2);
-$list-item-margin-bottom-lg: spacing(3);
+$list-item-margin-bottom: spacing(1) !default;
+$list-item-margin-bottom-md: spacing(2) !default;
+$list-item-margin-bottom-lg: spacing(3) !default;
