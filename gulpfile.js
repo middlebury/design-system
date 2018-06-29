@@ -16,6 +16,7 @@ const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
 const rsp = require('remove-svg-properties').stream;
 const dom = require('gulp-dom');
+const size = require('gulp-size');
 
 const rollup = require('rollup');
 const rollupBabel = require('rollup-plugin-babel');
@@ -118,6 +119,11 @@ gulp.task('styles:compiled', () => {
       .pipe(
         rename({
           suffix: prod ? '.min' : ''
+        })
+      )
+      .pipe(
+        size({
+          showFiles: true
         })
       )
       .pipe(sourcemaps.write('.'))
@@ -228,6 +234,7 @@ gulp.task('scripts:compiled', ['scripts:rollup'], () =>
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
+    .pipe(size({ showFiles: true }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist/js'))
 );
