@@ -13,7 +13,9 @@ group: components
 - Group multiple checkboxes/radio inputs in [fieldset with legend](#checkboxes-and-radios)
 - Error messaging must be next to the related field
 - Use checkboxes or radios instead of a dropdown with 2-3 options
-- Do not use reset/clear form buttons
+- Use descriptive submit button labels ("Do the thing" not "Submit")
+- Avoid reset/clear buttons
+- Use proper `for` attributes on `label`s
 
 <!-- - Right align long form submit buttons  -->
 
@@ -22,25 +24,25 @@ group: components
 <form>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" required>
+    <input type="email" class="form-control" id="email" required>
   </div>
   <div class="form-group">
     <label for="name">Name (optional)</label>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" id="name">
   </div>
   <div class="form-group">
-    <label for="">Topic</label>
-    <select class="form-control" required>
+    <label for="topic">Topic</label>
+    <select class="form-control" id="topic" required>
       <option selected>Choose a topic...</option>
       <option value="">Found a bug</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="">Message</label>
-    <textarea class="form-control" required></textarea>
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" required></textarea>
   </div>
   <div class="form-group">
-    <input type="submit" class="button button--primary">
+    <button type="submit" class="button button--primary">Send message</button>
   </div>
 </form>
 ```
@@ -148,11 +150,11 @@ Display error messages alongside their field.
 
 ### Optional vs. required fields
 
-TODO: should we denote ALL required fields, only optional fields, or both?
+We denote all required fields and optional fields.
 
 ```html example
 <div class="form-group">
-  <label for="email">Email</label>
+  <label for="email">Email*</label>
   <input type="email" class="form-control">
 </div>
 <div class="form-group">
@@ -160,6 +162,6 @@ TODO: should we denote ALL required fields, only optional fields, or both?
   <input type="text" class="form-control">
 </div>
 <div class="form-group">
-  <input type="submit" class="button button--primary">
+  <button type="submit" class="button button--primary">Subscribe</button>
 </div>
 ```
