@@ -151,4 +151,8 @@
     margin-top: $h6-margin-top;
     margin-bottom: $h6-margin-bottom;
   }
+
+  table {
+    @extend .table;
+  }
 }
