@@ -8,7 +8,7 @@ const Footer = ({ version, bugsUrl, buildTime }) => (
     </div>
     <div className="docs-footer__contact">
       <p>
-        See a problem? <a href={bugsUrl}>open an issue</a> on GitHub
+        See a problem? <a href={bugsUrl}>Open an issue</a> on GitHub
       </p>
     </div>
   </footer>
