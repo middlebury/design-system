@@ -1,6 +1,7 @@
 {
   "name": "middlebury-design-system-site",
   "scripts": {
+    "start": "gatsby develop",
     "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
