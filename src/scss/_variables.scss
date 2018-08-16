@@ -207,28 +207,28 @@ $h1-margin-bottom: spacing(4) !default;
 
 $h2-font-size: typescale(7) !default;
 $h2-margin-top: spacing(6) !default;
-$h2-margin-bottom: spacing(3) !default;
+$h2-margin-bottom: spacing(4) !default;
 
-$h3-font-size: typescale(6) !default;
-$h3-margin-top: spacing(5) !default;
-$h3-margin-bottom: spacing(3) !default;
+$h3-font-size: typescale(5) !default;
+$h3-margin-top: spacing(4) !default;
+$h3-margin-bottom: spacing(2) !default;
 
 $h4-font-size: typescale(5) !default;
-$h4-margin-top: spacing(4) !default;
+$h4-margin-top: spacing(5) !default;
 $h4-margin-bottom: spacing(1) !default;
 
 $h5-font-size: typescale(3) !default;
 $h5-margin-top: spacing(3) !default;
-$h5-margin-bottom: 0 !default;
+$h5-margin-bottom: spacing(1) !default;
 
 $h6-font-size: typescale(2) !default;
 $h6-margin-top: spacing(3) !default;
-$h6-margin-bottom: 0 !default;
+$h6-margin-bottom: spacing(1) !default;
 
 // Paragraphs
 $paragraph-font-size: typescale(4) !default;
 $paragraph-line-height: lineheight('body') !default;
-$paragraph-margin-bottom: spacing(3) !default;
+$paragraph-margin-bottom: spacing(4) !default;
 
 ////
 /// Component variables
