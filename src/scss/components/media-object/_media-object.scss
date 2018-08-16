@@ -6,7 +6,7 @@
 
 .media-object__image {
   width: 25%;
-  padding-right: 1.5rem;
+  margin-right: spacing(4);
   min-width: 100px;
 }
 
@@ -17,7 +17,7 @@
 .media-object--right {
   .media-object__image {
     order: 2;
-    padding-right: 0;
-    padding-left: 1rem;
+    margin-right: 0;
+    margin-left: spacing(4);
   }
 }
