@@ -157,7 +157,6 @@ $font-weight-bold: 700;
 // line heights
 $line-height-solid: 1;
 $line-height-heading: 1.4;
-$line-height-lead: 1.6;
 $line-height-body: 1.7;
 
 $line-heights: () !default;
@@ -165,7 +164,6 @@ $line-heights: map-merge(
   (
     'body': $line-height-body,
     'heading': $line-height-heading,
-    'lead': $line-height-lead,
     'solid': $line-height-solid
   ),
   $line-heights
@@ -235,9 +233,9 @@ $paragraph-margin-bottom: spacing(4) !default;
 ////
 
 // Lead
-$lead-font-size: typescale(5) !default;
-$lead-line-height: lineheight('lead') !default;
-$lead-margin-bottom: spacing(4) !default;
+$lead-font-size: typescale(7) !default;
+$lead-line-height: lineheight('heading') !default;
+$lead-margin-bottom: spacing(6) !default;
 
 // captions
 $caption-font-size: typescale(2) !default;

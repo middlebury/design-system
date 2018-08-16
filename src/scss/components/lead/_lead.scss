@@ -1,10 +1,6 @@
-$lead-font-size: 26px;
-$lead-line-height: 38px;
-$lead-margin-bottom: 2rem;
-
 .lead {
   font-size: $lead-font-size;
-  line-height: $lead-line-height;
+  line-height: $line-height-heading;
   margin-bottom: $lead-margin-bottom;
 
   a {
