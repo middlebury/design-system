@@ -1,0 +1,31 @@
+.quote {
+  margin-top: spacing(6);
+  margin-bottom: spacing(6);
+}
+
+.quote__text {
+  color: $teal;
+  font-size: typescale(7);
+  line-height: lineheight('heading');
+  margin-bottom: spacing(2);
+  quotes: '“' '”';
+
+  .quote--marks & {
+    position: relative;
+
+    &:before {
+      content: open-quote;
+      position: absolute;
+      top: 0;
+      right: 100%;
+    }
+
+    &:after {
+      content: close-quote;
+    }
+  }
+}
+
+.quote__cite {
+  font-size: typescale(2);
+}
