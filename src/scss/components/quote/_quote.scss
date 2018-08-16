@@ -8,9 +8,9 @@
   font-size: typescale(7);
   line-height: lineheight('heading');
   margin-bottom: spacing(2);
-  quotes: '“' '”';
 
   .quote--marks & {
+    quotes: '“' '”';
     position: relative;
 
     &:before {
