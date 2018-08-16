@@ -7,13 +7,11 @@
 }
 
 .link-list__list {
+  margin-top: spacing(5);
+
   @include media(sm) {
     @include make-row();
   }
-}
-
-.link-list__text {
-  margin-bottom: spacing(5);
 }
 
 .link-list__item {
