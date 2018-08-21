@@ -1,0 +1,48 @@
+.transcript {
+  margin-top: spacing(3);
+}
+
+.transcript__button {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  font-size: typescale(2);
+  font-weight: $font-weight-medium;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $navy;
+    text-decoration: none;
+  }
+}
+
+.transcript__icon {
+  margin-left: spacing(2);
+  transition: 0.2s;
+
+  .transcript.is-toggled & {
+    transform: rotate(180deg);
+  }
+}
+
+.transcript__body {
+  margin-top: spacing(2);
+
+  .transcript.has-toggler & {
+    display: none;
+  }
+
+  .transcript.is-toggled & {
+    display: block;
+  }
+
+  p {
+    font-size: typescale(3);
+    margin-bottom: $paragraph-margin-bottom;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -8,7 +8,3 @@ group: components
 ## Default
 `preview:components/video/video.html`
 `embed:components/video/video.html`
-
-## With transcript
-`preview:components/video/video--transcript.html`
-`embed:components/video/video--transcript.html`
