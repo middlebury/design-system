@@ -243,8 +243,8 @@ $caption-font-size: typescale(2) !default;
 $caption-color: $gray !default;
 
 // Shared buttons and forms styles
-$input-btn-padding-y: spacing(2) !default;
-$input-btn-padding-x: spacing(3) !default;
+$input-btn-padding-y: spacing(3) !default;
+$input-btn-padding-x: spacing(6) !default;
 $input-btn-font-size: typescale(3) !default;
 $input-btn-line-height: lineheight('body') !default;
 
@@ -269,7 +269,7 @@ $btn-color: $black !default;
 // primary
 $btn-primary-bg: $brand-primary !default;
 $btn-primary-color: $white !default;
-$btn-primary-hover-bg: $brand-primary-dark !default;
+$btn-primary-hover-bg: lighten($brand-primary, 10%) !default;
 $btn-primary-hover-color: $white !default;
 
 // secondary

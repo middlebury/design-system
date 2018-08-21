@@ -1,5 +1,5 @@
 .video {
-  position: relative;
+  // position: relative;
 }
 
 .video__content {
@@ -19,9 +19,6 @@
   }
 }
 
-.video__link {
-}
-
 .video__button {
   position: absolute;
   bottom: 0;
@@ -29,49 +26,14 @@
 }
 
 .video__body {
-  padding: 1rem 1.5rem;
-  border: $border-width solid $border-color;
+  padding: spacing(3) spacing(4);
+  border: 1px solid $border-color;
 }
 
 .video__title {
   font-size: $h3-font-size;
-  margin-bottom: 0.5rem;
+  margin-bottom: $h3-margin-bottom;
 }
 
 .video__text {
-}
-
-.video__transcript-button {
-  margin-top: 1rem;
-  display: inline-block;
-}
-
-.video__transcript-icon {
-  // display: none;
-  margin-left: 0.5rem;
-}
-
-.video__transcript-icon--close {
-  display: none;
-  .video__transcript-button.is-toggled & {
-    display: inline-block;
-  }
-}
-
-.video__transcript-icon--open {
-  .video__transcript-button.is-toggled & {
-    display: none;
-  }
-}
-
-.video__transcript {
-  margin-top: 1rem;
-
-  &.has-toggler {
-    display: none;
-  }
-
-  &.is-toggled {
-    display: block;
-  }
 }
