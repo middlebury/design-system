@@ -43,27 +43,32 @@
     "umd/"
   ],
   "scripts": {
-    "start": "gulp dev",
+    "start": "npm-run-all -p storybook dev:scripts",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build:storybook": "build-storybook -c .storybook -o .out",
+    "dev:scripts": "gulp dev",
     "build": "gulp build",
     "clean": "gulp clean",
     "prebuild": "yarn clean",
     "prepublishOnly": "yarn build",
-    "storybook": "start-storybook -p 9001 -c .storybook",
     "install:site": "cd site && yarn",
     "build:site": "cd site && yarn build",
     "netlify": "yarn gulp build:icons && yarn install:site && yarn build:site",
     "test": "bundlesize"
   },
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "prismjs": "^1.15.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@storybook/react": "^3.4.10",
+    "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "bundlesize": "^0.17.0",
+    "css-loader": "^1.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -80,11 +85,21 @@
     "gulp-svgo": "^1.4.0",
     "gulp-uglify": "^3.0.0",
     "gulp-wrap": "^0.13.0",
+    "html-format": "^1.0.1",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^1.14.2",
+    "pretty": "^2.0.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-prism": "^4.3.2",
     "remove-svg-properties": "^0.3.3",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "storybook-addon-a11y": "^3.1.9",
+    "style-loader": "^0.22.1"
   },
   "bundlesize": [
     {
