@@ -35,31 +35,21 @@ const docsBundle = {
  * This is run before build task via npm script `prebuild`.
  */
 
-gulp.task('clean', () =>
-  // prettier-ignore
-  del([
-    './umd',
-    './es',
-    './scss',
-    './dist/css',
-    './dist/js',
-    './dist/icons'
-  ])
-);
+const clean = () =>
+  del(['./umd', './es', './scss', './dist/css', './dist/js', './dist/icons']);
 
 /**
  * dev server
  */
 
-gulp.task('serve', () =>
+const serve = () =>
   browserSync.init({
     server: {
       baseDir: './demo',
       directory: true
     },
     open: false
-  })
-);
+  });
 
 /**
  * Demo
@@ -67,7 +57,7 @@ gulp.task('serve', () =>
  * Move html files to demo folder so they can be viewed with browser sync.
  */
 
-gulp.task('html:dev', ['build:icons'], () => {
+const htmlDev = () => {
   const icons = fs.readFileSync('./dist/icons/mds-icons.svg', 'utf-8');
 
   return gulp
@@ -84,13 +74,13 @@ gulp.task('html:dev', ['build:icons'], () => {
     )
     .pipe(gulp.dest('./demo/'))
     .pipe(browserSync.stream());
-});
+};
 
 /**
  * Sass tasks
  */
 
-gulp.task('styles:dev', () =>
+const stylesDev = () =>
   gulp
     .src('./src/scss/mds.scss')
     .pipe(sourcemaps.init())
@@ -98,48 +88,41 @@ gulp.task('styles:dev', () =>
     .pipe(autoprefixer())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./demo/css'))
-    .pipe(browserSync.stream())
-);
+    .pipe(browserSync.stream());
 
 // Moves sass files to root so npm installs can easily import
 // files without downloading html/md files as well.
-gulp.task('styles:source', () =>
-  gulp.src('./src/scss/**/*.scss').pipe(gulp.dest('./scss'))
-);
+const stylesSource = () =>
+  gulp.src('./src/scss/**/*.scss').pipe(gulp.dest('./scss'));
 
-gulp.task('styles:compiled', () => {
-  const buildStyles = prod =>
-    gulp
-      .src('./src/scss/mds.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer())
-      .pipe(gulpIf(prod, combineMq()))
-      .pipe(gulpIf(prod, cssnano()))
-      .pipe(
-        rename({
-          suffix: prod ? '.min' : ''
-        })
-      )
-      .pipe(
-        size({
-          showFiles: true
-        })
-      )
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./dist/css'));
+const makeStyles = prod => () =>
+  gulp
+    .src('./src/scss/mds.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(gulpIf(prod, combineMq()))
+    .pipe(gulpIf(prod, cssnano()))
+    .pipe(
+      rename({
+        suffix: prod ? '.min' : ''
+      })
+    )
+    .pipe(
+      size({
+        showFiles: true
+      })
+    )
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./dist/css'));
 
-  // build unmin files
-  buildStyles();
-  // build minified files
-  buildStyles(true);
-});
+const stylesCompiled = gulp.parallel(makeStyles(true), makeStyles());
 
 /**
  * Javascript tasks
  */
 
-gulp.task('scripts:dev', () =>
+const scriptsDev = () =>
   rollup
     .rollup({
       input: './src/js/index.js',
@@ -173,10 +156,9 @@ gulp.task('scripts:dev', () =>
     )
     .then(() => {
       browserSync.reload();
-    })
-);
+    });
 
-gulp.task('scripts:umd', () => {
+const scriptsUmd = () => {
   const srcFiles = ['./src/**/*.js'];
   const babelOpts = {
     presets: ['env'],
@@ -187,9 +169,9 @@ gulp.task('scripts:umd', () => {
     .src(srcFiles, { base: './src/js' })
     .pipe(babel(babelOpts))
     .pipe(gulp.dest('./umd/'));
-});
+};
 
-gulp.task('scripts:es', () => {
+const scriptsEs = () => {
   const srcFiles = ['./src/**/*.js'];
   const babelOpts = {
     presets: [['env', { modules: false }]]
@@ -199,9 +181,9 @@ gulp.task('scripts:es', () => {
     .src(srcFiles, { base: './src/js' })
     .pipe(babel(babelOpts))
     .pipe(gulp.dest('./es'));
-});
+};
 
-gulp.task('scripts:rollup', () =>
+const scriptsRollup = () =>
   rollup
     .rollup({
       input: './src/js/index.js',
@@ -224,11 +206,10 @@ gulp.task('scripts:rollup', () =>
         }),
         bundle.write(docsBundle)
       ])
-    )
-);
+    );
 
 // creates the minified version of the rolled up umd build
-gulp.task('scripts:compiled', ['scripts:rollup'], () =>
+const scriptsCompile = () =>
   gulp
     .src('./dist/js/mds.js')
     .pipe(sourcemaps.init())
@@ -236,8 +217,7 @@ gulp.task('scripts:compiled', ['scripts:rollup'], () =>
     .pipe(rename({ suffix: '.min' }))
     .pipe(size({ showFiles: true }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/js'))
-);
+    .pipe(gulp.dest('./dist/js'));
 
 /**
  * svgs
@@ -267,12 +247,11 @@ const buildSvgs = src =>
     );
 
 // clean up and minify svgs
-gulp.task('svg:build', () =>
-  buildSvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'))
-);
+const svgBuild = () =>
+  buildSvgs('./src/icons/*.svg').pipe(gulp.dest('./dist/icons/svg'));
 
 // create svg sprite
-gulp.task('svg:sprite', () =>
+const svgBuildSprite = () =>
   buildSvgs('./src/icons/*.svg')
     .pipe(
       svgSprite({
@@ -290,11 +269,10 @@ gulp.task('svg:sprite', () =>
         }
       })
     )
-    .pipe(gulp.dest('./dist/icons/sprites'))
-);
+    .pipe(gulp.dest('./dist/icons/sprites'));
 
 // copy/rename final svg files and sprite
-gulp.task('svg:dist', ['svg:sprite'], () =>
+const svgDist = () =>
   gulp
     .src('./dist/icons/sprites/symbol/**/*.svg')
     .pipe(
@@ -305,8 +283,7 @@ gulp.task('svg:dist', ['svg:sprite'], () =>
         }
       })
     )
-    .pipe(gulp.dest('./dist/icons'))
-);
+    .pipe(gulp.dest('./dist/icons'));
 
 /**
  * TODO: a11y markup test
@@ -316,11 +293,11 @@ gulp.task('svg:dist', ['svg:sprite'], () =>
  * Watch
  */
 
-gulp.task('watch', () => {
-  gulp.watch('./src/**/*.scss', ['styles:dev']);
-  gulp.watch('./src/**/*.html', ['html:dev']);
-  gulp.watch('./src/**/*.js', ['scripts:dev']);
-});
+const watch = () => {
+  gulp.watch('./src/**/*.scss', stylesDev);
+  gulp.watch('./src/**/*.html', htmlDev);
+  gulp.watch('./src/**/*.js', scriptsDev);
+};
 
 /**
  * Build tasks
@@ -331,22 +308,28 @@ gulp.task('watch', () => {
  * 2. build ES module files and put in es/
  * 3. build IIFE rollup bundle, create minified version, and add sourcemaps and place in dist/
  */
-gulp.task('build:scripts', ['scripts:umd', 'scripts:es', 'scripts:compiled']);
+const buildScripts = gulp.parallel(
+  scriptsUmd,
+  scriptsEs,
+  scriptsRollup,
+  scriptsCompile
+);
 
 // compile all sass and move source files
-gulp.task('build:styles', ['styles:compiled', 'styles:source']);
+const buildStyles = gulp.parallel(stylesCompiled, stylesSource);
 
 // minify svgs, create svg sprite, and move to dist
-gulp.task('build:icons', ['svg:build', 'svg:dist']);
+const buildIcons = gulp.series(svgBuild, svgBuildSprite, svgDist);
 
 // Mapped to npm run build
-gulp.task('build', ['build:scripts', 'build:styles', 'build:icons']);
+const build = gulp.parallel(buildScripts, buildStyles, buildIcons);
 
 // For demo environment
-gulp.task('dev', ['scripts:dev', 'html:dev', 'styles:dev', 'serve', 'watch']);
+const dev = gulp.parallel(scriptsDev, htmlDev, stylesDev, serve, watch);
 
-gulp.task('default', () => {
-  console.log(
-    '\n\nPlease use `npm run dev` to start local browser-sync server for framework development\n\n'
-  );
-});
+module.exports = {
+  build,
+  clean,
+  buildIcons,
+  dev
+};
