@@ -103,6 +103,7 @@
     "braces": "^2.3.1",
     "set-value": "^3.0.1",
     "mixin-deep": "^2.0.1",
-    "clean-css": "^4.1.11"
+    "clean-css": "^4.1.11",
+    "lodash.template": "^4.5.0"
   }
 }
