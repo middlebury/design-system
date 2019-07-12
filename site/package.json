@@ -8,21 +8,24 @@
     "reset": "rm -rf ./.cache"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
+    "classnames": "^2.2.6",
     "colorable": "^1.0.5",
-    "gatsby": "^1.9.255",
-    "gatsby-link": "^1.6.41",
-    "gatsby-plugin-catch-links": "^1.0.19",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "gatsby-plugin-sass": "^1.0.26",
-    "gatsby-remark-autolink-headers": "^1.4.17",
-    "gatsby-remark-embed-snippet": "^1.0.21",
-    "gatsby-remark-prismjs": "^2.0.2",
-    "gatsby-source-filesystem": "^1.5.34",
-    "gatsby-transformer-remark": "^1.7.40",
-    "gatsby-transformer-yaml": "^1.5.16",
-    "prism-themes": "^1.0.0",
+    "gatsby": "^2.13.18",
+    "gatsby-link": "^2.2.2",
+    "gatsby-plugin-catch-links": "^2.1.2",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-sass": "^2.1.3",
+    "gatsby-remark-autolink-headers": "^2.1.2",
+    "gatsby-remark-embed-snippet": "^4.1.2",
+    "gatsby-remark-prismjs": "^3.3.3",
+    "gatsby-source-filesystem": "^2.1.5",
+    "gatsby-transformer-remark": "^2.6.4",
+    "gatsby-transformer-yaml": "^2.2.2",
+    "prism-themes": "^1.1.0",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-helmet": "^5.2.0"
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
   }
 }

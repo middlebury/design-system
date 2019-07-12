@@ -11,14 +11,14 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = class HTML extends React.Component {
+class HTML extends React.Component {
   render() {
     let css;
     if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{__html: stylesStr}}
+          dangerouslySetInnerHTML={{ __html: stylesStr }}
         />
       );
     }
@@ -43,17 +43,19 @@ module.exports = class HTML extends React.Component {
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <span
-            style={{position: 'absolute', width: 0, height: 0}}
-            dangerouslySetInnerHTML={{__html: icons}}
+            style={{ position: 'absolute', width: 0, height: 0 }}
+            dangerouslySetInnerHTML={{ __html: icons }}
           />
           <div
             key={'body'}
             id="___gatsby"
-            dangerouslySetInnerHTML={{__html: this.props.body}}
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
         </body>
       </html>
     );
   }
-};
+}
+
+export default HTML;

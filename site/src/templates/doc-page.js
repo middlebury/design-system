@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import Layout from '../components/Layout';
 import ColorPalette from '../components/ColorPalette';
 import IconLibrary from '../components/IconLibrary';
 
@@ -43,40 +44,44 @@ class DocPageTemplate extends Component {
     const editLink = `${repoUrl}/edit/master/src/scss/${doc.fields.path}`;
 
     return (
-      <article className="docs-page">
-        <Helmet title={title}>
-          {desc && <meta name="description" content={desc} />}
-        </Helmet>
-        <header className="docs-page-header">
-          {group && <p className="docs-page-header__group">{group}</p>}
-          <h1 className="docs-page-header__title">{title}</h1>
-          {desc && <p className="docs-page-header__desc">{desc}</p>}
-          {responsive && <p className="docs-page-header__badge">Responsive</p>}
-        </header>
-        <section className="docs-page__main">
-          {tableOfContents && (
-            <div className="docs-page__toc">
-              <TableOfContents toc={tableOfContents} />
+      <Layout>
+        <article className="docs-page">
+          <Helmet title={title}>
+            {desc && <meta name="description" content={desc} />}
+          </Helmet>
+          <header className="docs-page-header">
+            {group && <p className="docs-page-header__group">{group}</p>}
+            <h1 className="docs-page-header__title">{title}</h1>
+            {desc && <p className="docs-page-header__desc">{desc}</p>}
+            {responsive && (
+              <p className="docs-page-header__badge">Responsive</p>
+            )}
+          </header>
+          <section className="docs-page__main">
+            {tableOfContents && (
+              <div className="docs-page__toc">
+                <TableOfContents toc={tableOfContents} />
+              </div>
+            )}
+
+            <div className="docs-page__content">
+              {showIcons && <IconLibrary icons={icons} />}
+              {showColors && <ColorPalette colors={colors} />}
+
+              <div
+                className="docs-markdown"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+
+              <div>
+                <a href={editLink}>Edit on GitHub</a>
+              </div>
+
+              {/* <SassDoc doc={sassdoc} /> */}
             </div>
-          )}
-
-          <div className="docs-page__content">
-            {showIcons && <IconLibrary icons={icons} />}
-            {showColors && <ColorPalette colors={colors} />}
-
-            <div
-              className="docs-markdown"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-
-            <div>
-              <a href={editLink}>Edit on GitHub</a>
-            </div>
-
-            {/* <SassDoc doc={sassdoc} /> */}
-          </div>
-        </section>
-      </article>
+          </section>
+        </article>
+      </Layout>
     );
   }
 }
