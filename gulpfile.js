@@ -304,10 +304,8 @@ const watch = () => {
  * 2. build ES module files and put in es/
  * 3. build IIFE rollup bundle, create minified version, and add sourcemaps and place in dist/
  */
-const buildScripts = gulp.parallel(
-  scriptsUmd,
-  scriptsEs,
-  scriptsRollup,
+const buildScripts = gulp.series(
+  gulp.parallel(scriptsUmd, scriptsEs, scriptsRollup),
   scriptsCompile
 );
 
