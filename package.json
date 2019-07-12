@@ -45,6 +45,7 @@
   "scripts": {
     "start": "gulp dev",
     "build": "gulp build",
+    "build:icons": "gulp buildIcons",
     "clean": "gulp clean",
     "prebuild": "yarn clean",
     "prepublishOnly": "yarn build",
