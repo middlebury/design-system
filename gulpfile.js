@@ -14,7 +14,6 @@ const babel = require('gulp-babel');
 const rename = require('gulp-rename');
 const svgSprite = require('gulp-svg-sprite');
 const svgo = require('gulp-svgo');
-const rsp = require('remove-svg-properties').stream;
 const dom = require('gulp-dom');
 const size = require('gulp-size');
 
@@ -227,22 +226,19 @@ const buildSvgs = src =>
   gulp
     .src(src)
     .pipe(
-      rsp.remove({
-        properties: ['fill', rsp.PROPS_STROKE],
-        log: false
-      })
-    )
-    .pipe(
       dom(function() {
         const svg = this.querySelector('svg');
         svg.setAttribute('fill-rule', 'evenodd');
-        svg.removeAttribute('xmlns');
         return this.querySelector('body').innerHTML;
       }, false)
     )
     .pipe(
       svgo({
-        plugins: [{ removeTitle: true }]
+        plugins: [
+          { removeTitle: true },
+          { removeXMLNS: true },
+          { removeAttrs: { attrs: '(fill|stroke)' } }
+        ]
       })
     );
 

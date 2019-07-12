@@ -80,7 +80,6 @@
     "gulp-svgo": "^1.4.0",
     "gulp-uglify": "^3.0.0",
     "gulp-wrap": "^0.13.0",
-    "remove-svg-properties": "^0.3.3",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-node-resolve": "^3.3.0",
